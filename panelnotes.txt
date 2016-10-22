@@ -1,0 +1,134 @@
+shelters have about 50 beds ea
+
+checkin system with shared DB that keeps track of people going in/out and beds avail
+
+what are the ways people become homeless?
+
+    utils get turned off
+    lgbt kids kicked out of home
+    domestic violence - run away to escape
+    lose job and become unable to pay rent
+
+What happens when they get to them?
+    Intake/assessment of need
+        figure out what happened/why they became homeless
+        determine if they should be diverted
+        if not diverted, figure out what they need
+
+what does a typical day look like for a person experiencing homelessness?
+    person has to leave if shelter closes
+        go to job, medical services, find somewhere to be
+    young people
+        classes throughout the day
+        don't have to leave shelter
+        job service Program
+    lot of variation
+        subpopulations
+            families (women w/ kids)
+        two ways to define homelessness
+            living in place that doesn't meet standards
+            dept of ed: moving around, staying with family & friends, temporary housing
+
+        lot of bouncing around
+
+what is a coc?
+    continuum of care
+    # of agencies in area determines how large the coc is
+    need certain penetration of population in order to qualify
+        HUD funnels money through cocs
+        helps coordinate services
+    differs between regions
+        here, it's largely service providers
+
+    organization - structured like a board
+    what sort of integration is in the CoC?
+        getting close to one way for entry point
+        in past, there was a hotline
+        certain guidelines for info gathered?
+            determined by hud data collection standards
+                2014 ed is newest - updated oct 1st yearly
+                major document would be 2014 data standards - found on HUD exchangne
+
+                verifying homelessness
+                identifying barriers
+                basic demo info
+                income/benefits/insurance
+
+        coordinated entry is the processed used
+
+    how do you share info?
+        share info through the hmis system
+        different software apps
+            compassrose
+            servicepoint - used to collect all data
+            agencies have different systems internally
+            info has to be keyed twice to be put into internal systems
+        informal communication is primary method
+            monthly meetings
+            how is information shared at meetings?
+                talk about things driving efficiencies and inefficiencies
+                looks at programs within coc and determines what should be funded
+                    called rank and review - goes into HUD funding
+
+        what kind of devices used to enter data?
+            PCs
+            meets HIPAA/HMIS policy manual
+can you serve someone even if you don't have any info on them?
+    outreach is about reaching out to most vulnerable
+    people can refuse to answer some questions
+        if some  data isn't answered, some shelters cannot provide
+    gateway180 background checks their entrants
+
+how do people come to them?
+    word of mouth
+    outreach services
+
+how many people that come in have access to a smart device?
+    every young person
+    adult male - at least half
+    most people
+    about 90% had text
+
+how does coordinated entry work?
+    theoretically, when someone comes into an agency and needs services, the entry data should be input into a system that would prioritize people by level of need
+        highest priority gets put into housing first
+    current continuum isn't there yet
+
+how long do you keep the data, what do you do about repeat customers?
+    data can be kept forever
+
+are people with drug & alcohol problems treated differently?
+    if soeone has more severne needs, they work harder to provvide addl services
+
+is there any way they can keep track of movement and go about days?
+    if someone comes in, how do yoou know what happens when they leave?
+    no way to track
+
+any hipaa regulations preventing data sharing?
+    each community can choose how they share data
+
+how do you get data to predict if someone's becoming homeless?
+    system flooded - focus is on finding the most at risk
+    hotline picks up on prevention
+        htoline info is not being used systematically
+    no mechanism to identify members of community that are at risk
+    working on better ways to solve it
+    utility bills, schools have data sets, landlords often have some data
+
+sometimes people have papers that show they were at another shelter before
+    residency letter/shelter letter
+        needed to get some privileges like library card or care+ voucher
+        can look at electronic record
+        hotline data is being tracked - how many calls, what happened, when they called
+
+    if someone stops in and beds are full, facility calls around to others
+    in poor weather, they offer seats to help get through a night
+
+
+data visualization
+    how does it stand now?
+        the data that hmis provides doesn't tell the whole story
+
+there are programs and resources that can help people pay bills that would prevent homelessness
+
+there are decent counts because people go out and count people outside
