@@ -1,12 +1,12 @@
 ﻿using HomelessHelper.Core.EntityFramework;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace HomelessHelper.Test
 {
-    [TestClass]
+    [TestFixture]
     public class DatabaseSchemaExport
     {
-        [TestMethod]
+        [Test]
         public void Export()
         {
             var manager = new DatabaseManager(new HomelessHelperDbContext());
