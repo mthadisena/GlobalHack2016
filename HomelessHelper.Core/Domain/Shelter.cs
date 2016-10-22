@@ -13,6 +13,7 @@ namespace HomelessHelper.Core.Domain
         public int NumberOfBeds { get; set; }
         public List<Client> Clients { get; set; }
         public List<Bed> Beds { get; set; }
+        public List<BedBooking> Bookings { get; set; }
         public Address Address { get; set; }
     }
 }
