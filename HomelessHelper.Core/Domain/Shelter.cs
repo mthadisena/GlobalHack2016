@@ -10,5 +10,6 @@ namespace HomelessHelper.Core.Domain
         public ShelterType Type { get; set; }
         public int NumberOfBeds { get; set; }
         public List<Client> Clients { get; set; }
+        public Address Address { get; set; }
     }
 }
