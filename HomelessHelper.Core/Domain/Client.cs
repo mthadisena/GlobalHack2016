@@ -33,5 +33,6 @@ namespace HomelessHelper.Core.Domain
         public int BedNumber { get; set; }
         public ClientStatus ClientStatus { get; set; }
         public DisablingConditions DisablingConditions { get; set; }
+        public LivingSituation LivingSituation { get; set; }
     }
 }
