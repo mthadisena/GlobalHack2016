@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using HomelessHelper.Core.Domain;
@@ -18,13 +19,24 @@ namespace HomelessHelper.Core.Service
         public List<Bed> Find(Guid shelterID, DateTime checkinDate)
         {
             var dbContext = new HomelessHelperDbContext();
-            var shelter = dbContext.Shelters.FirstOrDefault(x => x.Id == shelterID);
+            var shelter = dbContext.Shelters.Where(x => x.Id == shelterID).Include(x => x.Beds).FirstOrDefault();
 
             var beds = new List<Bed>();
             foreach (var bed in shelter.Beds)
             {
-                var availableBeds = shelter.Bookings.FirstOrDefault(x => x.BedNumber == bed.Number);
-                beds.Add(bed);
+                
+                if (shelter.Bookings == null)
+                {
+                    beds.Add(bed);
+                }
+                else
+                {
+                    if (shelter.Bookings.All(x => x.BedNumber != bed.Number))
+                    {
+
+                        beds.Add(bed);
+                    }
+                }
             }
            return beds;
         }

@@ -7,13 +7,13 @@ namespace HomelessHelper.Models
     public class InTakeModel
     {
         [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
-
         public string SSN { get; set; }
-
         [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
 
