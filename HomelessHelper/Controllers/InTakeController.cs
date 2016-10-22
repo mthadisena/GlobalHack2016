@@ -41,7 +41,6 @@ namespace HomelessHelper.Controllers
                     MilitaryBranch = model.VetStatus.MilitaryBranch,
                     DischargeStatus = model.VetStatus.DischargeStatus
                 }
-
             };
             dbContext.Clients.Add(client);
              
@@ -51,7 +50,7 @@ namespace HomelessHelper.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-
+        
         [HttpPost]
         public ActionResult Save(InTakeModel model)
         {

@@ -1,4 +1,4 @@
-﻿﻿using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.Domain.Enum;
 using HomelessHelper.Core.EntityFramework;
