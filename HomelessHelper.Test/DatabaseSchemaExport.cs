@@ -23,7 +23,7 @@ namespace HomelessHelper.Test
         { 
             var shelter1 = new Shelter
             {
-                Name = "Really cool shelter",
+                Name = "Shelter for men",
                 Type = ShelterType.Men,
                 Address = new Address() { AddressLine1 = "1001 st", City = "St Louis", State = "MO", Zip = "63103"}
             };
@@ -128,7 +128,7 @@ namespace HomelessHelper.Test
 
             var shelter4 = new Shelter
             {
-                Name = "LGBT shelter",
+                Name = "Shelter for Women",
                 Type = ShelterType.Women,
                 Address = new Address() { AddressLine1 = "4001 st", City = "St Louis", State = "MO", Zip = "63106" }
             };
@@ -162,7 +162,7 @@ namespace HomelessHelper.Test
 
             var shelter5 = new Shelter
             {
-                Name = "LGBT shelter",
+                Name = "Shelter for Women with children",
                 Type = ShelterType.WomenWithChildren,
                 Address = new Address() { AddressLine1 = "5001 st", City = "St Louis", State = "MO", Zip = "63107" }
             };
@@ -196,8 +196,8 @@ namespace HomelessHelper.Test
 
             var shelter6 = new Shelter
             {
-                Name = "LGBT shelter",
-                Type = ShelterType.WomenWithChildren,
+                Name = "Shelter for youth",
+                Type = ShelterType.Youth,
                 Address = new Address() { AddressLine1 = "6001 st", City = "St Louis", State = "MO", Zip = "63108" }
             };
             var shelter6Beds = new List<Bed>
