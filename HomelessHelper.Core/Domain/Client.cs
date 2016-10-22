@@ -37,5 +37,7 @@ namespace HomelessHelper.Core.Domain
         public Bed Bed { get; set; }
 
         public string Skills { get; set; }
+
+        public HousingStatus HousingStatus { get; set; }
     }
 }
