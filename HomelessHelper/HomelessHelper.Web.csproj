@@ -209,6 +209,7 @@
     <Compile Include="Models\InTakeModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\SearchModel.cs" />
+    <Compile Include="Models\StaffModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utility\JsonPartialResult.cs" />
@@ -278,10 +279,10 @@
     <Content Include="Views\InTake\Index.cshtml" />
     <Content Include="Views\InTake\PostInTakeForm.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Staff\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Staff\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
