@@ -31,4 +31,8 @@ namespace HomelessHelper.Core.Domain
 
         public ClientStatus ClientStatus { get; set; }
     }
+
+    public class ClientStatus
+    {
+    }
 }
