@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using HomelessHelper.Core.Domain;
 
 namespace HomelessHelper.Core.EntityFramework
