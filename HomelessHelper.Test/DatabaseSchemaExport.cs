@@ -7,7 +7,7 @@ namespace HomelessHelper.Test
     [TestFixture]
     public class DatabaseSchemaExport
     {
-        private HomelessHelperDbContext _context = new HomelessHelperDbContext();
+        private readonly HomelessHelperDbContext _context = new HomelessHelperDbContext();
 
         [Test]
         public void Export()
