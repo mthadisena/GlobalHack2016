@@ -208,7 +208,6 @@
     <Compile Include="Models\InTakeModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\SearchModel.cs" />
-    <Compile Include="Models\VetStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utility\JsonPartialResult.cs" />
