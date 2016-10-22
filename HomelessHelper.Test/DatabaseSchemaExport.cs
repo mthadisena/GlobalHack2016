@@ -105,7 +105,7 @@ namespace HomelessHelper.Test
                     Number = "1A",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter2
+                    Shelter = shelter3
                 },
 
                 new Bed
@@ -113,14 +113,14 @@ namespace HomelessHelper.Test
                     Number = "1B",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter2
+                    Shelter = shelter3
                 },
                 new Bed
                 {
                     Number = "1C",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter2
+                    Shelter = shelter3
                 }
             };
             shelter3.Beds = shelter3Beds;
