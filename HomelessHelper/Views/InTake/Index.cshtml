@@ -21,4 +21,25 @@
         @Html.EditorFor(model => model.SSN)
         @Html.ValidationMessageFor(model => model.SSN)
     </div>
+    <div class="col-md-10">
+        @Html.LabelFor(model => model.DateOfBirth)
+        @Html.EditorFor(model => model.DateOfBirth)
+        @Html.ValidationMessageFor(model =>  model.DateOfBirth)
+    </div>
+    <div class="col-md-10">
+        @Html.LabelFor(model => model.Race)
+        @Html.EditorFor(model => model.Race)
+        @Html.ValidationMessageFor(model => model.Race)
+    </div>
+    <div class="col-md-10">
+        @Html.LabelFor(model => model.Gender)
+        @Html.EditorFor(model => model.Gender)
+        @Html.ValidationMessageFor(model => model.Gender)
+    </div>
+    <div class="col-md-10">
+        @Html.LabelFor(model => model.VetStatus)
+        @Html.EditorFor(model => model.VetStatus)
+        @Html.ValidationMessageFor(model => model.VetStatus)
+    </div>
+
 </div>

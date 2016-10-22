@@ -9,5 +9,12 @@ namespace HomelessHelper.Controllers
         {
             return View(new InTakeModel());
         }
+
+        [HttpPost]
+        public ActionResult Index(InTakeModel model)
+        {
+            //TODO: business logic here to find shelter and book avaliable bed
+            return View(model);
+        }
     }
 }
