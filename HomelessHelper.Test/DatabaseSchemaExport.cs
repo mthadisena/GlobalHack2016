@@ -23,7 +23,7 @@ namespace HomelessHelper.Test
         { 
             var shelter1 = new Shelter
             {
-                Name = "Really cool shelter",
+                Name = "Shelter for men",
                 Type = ShelterType.Men,
                 Address = new Address() { AddressLine1 = "1001 st", City = "St Louis", State = "MO", Zip = "63103"}
             };
@@ -125,6 +125,108 @@ namespace HomelessHelper.Test
             };
             shelter3.Beds = shelter3Beds;
             _context.Shelters.Add(shelter3);
+
+            var shelter4 = new Shelter
+            {
+                Name = "Shelter for Women",
+                Type = ShelterType.Women,
+                Address = new Address() { AddressLine1 = "4001 st", City = "St Louis", State = "MO", Zip = "63106" }
+            };
+            var shelter4Beds = new List<Bed>
+            {
+                new Bed
+                {
+                    Number = "1A",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = shelter4
+                },
+
+                new Bed
+                {
+                    Number = "1B",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = shelter4
+                },
+                new Bed
+                {
+                    Number = "1C",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = shelter4
+                }
+            };
+            shelter4.Beds = shelter4Beds;
+            _context.Shelters.Add(shelter4);
+
+            var shelter5 = new Shelter
+            {
+                Name = "Shelter for Women with children",
+                Type = ShelterType.WomenWithChildren,
+                Address = new Address() { AddressLine1 = "5001 st", City = "St Louis", State = "MO", Zip = "63107" }
+            };
+            var shelter5Beds = new List<Bed>
+            {
+                new Bed
+                {
+                    Number = "1A",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = shelter5
+                },
+
+                new Bed
+                {
+                    Number = "1B",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = shelter5
+                },
+                new Bed
+                {
+                    Number = "1C",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = shelter5
+                }
+            };
+            shelter5.Beds = shelter5Beds;
+            _context.Shelters.Add(shelter5);
+
+            var shelter6 = new Shelter
+            {
+                Name = "Shelter for youth",
+                Type = ShelterType.Youth,
+                Address = new Address() { AddressLine1 = "6001 st", City = "St Louis", State = "MO", Zip = "63108" }
+            };
+            var shelter6Beds = new List<Bed>
+            {
+                new Bed
+                {
+                    Number = "1A",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = shelter6
+                },
+
+                new Bed
+                {
+                    Number = "1B",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = shelter6
+                },
+                new Bed
+                {
+                    Number = "1C",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = shelter6
+                }
+            };
+            shelter6.Beds = shelter6Beds;
+            _context.Shelters.Add(shelter6);
 
             _context.SaveChanges();
         }
