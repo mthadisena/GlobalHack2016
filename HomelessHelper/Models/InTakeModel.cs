@@ -13,4 +13,3 @@ namespace HomelessHelper.Models
         public bool Gender { get; set; }
         public VetStatus VetStatus { get; set; }
     }
-}
