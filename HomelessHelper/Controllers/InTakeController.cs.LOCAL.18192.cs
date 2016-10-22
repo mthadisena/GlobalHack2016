@@ -4,7 +4,6 @@ using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.EntityFramework;
 using HomelessHelper.Models;
 using VetStatus = HomelessHelper.Core.Domain.VetStatus;
-using HomelessHelper.Utility;
 
 namespace HomelessHelper.Controllers
 {
@@ -42,22 +41,7 @@ namespace HomelessHelper.Controllers
 
             });
             dbContext.SaveChanges();
-            //TODO: business logic here to find shelter and book avaliable bed
-            return RedirectToAction("Index", "Home");
-        }
-
-        [HttpPost]
-        public ActionResult Save(InTakeModel model)
-        {
-            //TODO: business logic here to find shelter and book avaliable bed
-
-            var response = new JsonPartialResult()
-            {
-                Status = JsonResultStatus.Successful,
-                Message = "Successfully Submitted"
-            };
-
-            return Json(response, JsonRequestBehavior.AllowGet);
+            return View();
         }
     }
 }
