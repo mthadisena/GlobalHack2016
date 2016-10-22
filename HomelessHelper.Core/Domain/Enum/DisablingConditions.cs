@@ -2,11 +2,10 @@
 
 namespace HomelessHelper.Core.Domain.Enum
 {
-    public enum NameQuality
+    public enum DisablingConditions
     {
-        FullNameReported,
-        [Description("Partial/Street/Code Name Reported")]
-        PartialStreetCodeNameReported,
+        Yes,
+        No,
         [Description("Client Doesn't Know")]
         ClientDoesNotKnow,
         ClientRefused

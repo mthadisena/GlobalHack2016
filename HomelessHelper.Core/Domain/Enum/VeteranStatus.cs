@@ -2,11 +2,10 @@
 
 namespace HomelessHelper.Core.Domain.Enum
 {
-    public enum NameQuality
+    public enum VeteranStatus
     {
-        FullNameReported,
-        [Description("Partial/Street/Code Name Reported")]
-        PartialStreetCodeNameReported,
+        No,
+        Yes,
         [Description("Client Doesn't Know")]
         ClientDoesNotKnow,
         ClientRefused

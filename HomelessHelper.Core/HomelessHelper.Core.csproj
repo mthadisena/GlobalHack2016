@@ -33,6 +33,10 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -44,18 +48,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Enum\ClientStatus.cs" />
-    <Compile Include="Domain\Enum\Gender.cs" />
     <Compile Include="Domain\Bed.cs" />
+    <Compile Include="Domain\Enum\ClientStatus.cs" />
+    <Compile Include="Domain\BedBooking.cs" />
     <Compile Include="Domain\Enum\DateOfBirthType.cs" />
+    <Compile Include="Domain\Enum\DisablingConditions.cs" />
     <Compile Include="Domain\Enum\DischargeStatus.cs" />
+    <Compile Include="Domain\Enum\Ethnicity.cs" />
+    <Compile Include="Domain\Enum\Gender.cs" />
+    <Compile Include="Domain\Enum\LengthOfStay.cs" />
     <Compile Include="Domain\Enum\MilitaryBranch.cs" />
     <Compile Include="Domain\Enum\NameQuality.cs" />
     <Compile Include="Domain\Enum\Race.cs" />
+    <Compile Include="Domain\Enum\ResidenceStatusCategory.cs" />
     <Compile Include="Domain\Enum\SSNDataQuality.cs" />
+    <Compile Include="Domain\Enum\TimesHomeless.cs" />
+    <Compile Include="Domain\Enum\TypeOfResidence.cs" />
+    <Compile Include="Domain\Enum\VeteranStatus.cs" />
     <Compile Include="Domain\Enum\WarServedIn.cs" />
+    <Compile Include="Domain\LivingSituation.cs" />
     <Compile Include="Domain\VetStatus.cs" />
     <Compile Include="Domain\ShelterAssigned.cs" />
+    <Compile Include="Domain\Visit.cs" />
     <Compile Include="EntityFramework\DatabaseManager.cs" />
     <Compile Include="EntityFramework\EFConfiguration.cs" />
     <Compile Include="EntityFramework\Entity.cs" />
@@ -66,9 +80,16 @@
     <Compile Include="Domain\ServicePerson.cs" />
     <Compile Include="Domain\Shelter.cs" />
     <Compile Include="Domain\Enum\ShelterType.cs" />
+    <Compile Include="Infrastructure\Conventions\ResidencialCategoryAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\BedFinder.cs" />
+    <Compile Include="Service\ShelterFinder.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Staging\Sample Dataset.xlsx" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
