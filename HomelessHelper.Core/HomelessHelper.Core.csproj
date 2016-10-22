@@ -55,7 +55,6 @@
     <Compile Include="EntityFramework\Entity.cs" />
     <Compile Include="EntityFramework\HomelessHelperDbContext.cs" />
     <Compile Include="Domain\Address.cs" />
-    <Compile Include="Domain\BasePerson.cs" />
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Person.cs" />
     <Compile Include="Domain\ServicePerson.cs" />

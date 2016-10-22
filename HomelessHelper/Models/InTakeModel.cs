@@ -1,4 +1,6 @@
-﻿namespace HomelessHelper.Models
+﻿using System;
+
+namespace HomelessHelper.Models
 {
     public class InTakeModel
     {
