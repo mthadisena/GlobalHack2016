@@ -1,18 +1,22 @@
-﻿using HomelessHelper.Core.Domain;
+﻿using System.Collections.Generic;
+using System.Linq;
+using HomelessHelper.Core.Domain;
+using HomelessHelper.Core.Domain.Enum;
+using HomelessHelper.Core.EntityFramework;
 
 namespace HomelessHelper.Core.Service
 {
 
     public interface IShelterFinder
     {
-        Shelter Find(string input);
+        List<Shelter> Find(ShelterType shelterType);
     }
     public class ShelterFinder: IShelterFinder
    {
-       public Shelter Find(string input)
+       public List<Shelter> Find( ShelterType shelterType)
        {
-     
-            return new Shelter();
+            var dbContext = new HomelessHelperDbContext();
+            return dbContext.Shelters.Where(x => x.Type == shelterType).ToList();
        }
    }
 }
