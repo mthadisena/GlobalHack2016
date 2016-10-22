@@ -25,6 +25,7 @@ namespace HomelessHelper.Core.Domain
         public Shelter Shelter { get; set; }
         public DateOfBirthType DateOfBirthType { get; set; }
         public Race Race { get; set; }
+        public Ethnicity Ethnicity { get; set; }
         public int BedNumber { get; set; }
 
         public ClientStatus ClientStatus { get; set; }

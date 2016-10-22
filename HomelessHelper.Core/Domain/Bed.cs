@@ -5,7 +5,7 @@ using HomelessHelper.Core.EntityFramework;
 
 namespace HomelessHelper.Core.Domain
 {
-    [Table("Client")]
+    [Table("Bed")]
     public class Bed : Entity
     {
         public string Number { get; set; }

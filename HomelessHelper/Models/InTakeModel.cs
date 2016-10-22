@@ -1,4 +1,5 @@
 ﻿using System;
+using HomelessHelper.Core.Domain.Enum;
 
 namespace HomelessHelper.Models
 {
@@ -11,49 +12,5 @@ namespace HomelessHelper.Models
         public Race Race { get; set; }
         public bool Gender { get; set; }
         public VetStatus VetStatus { get; set; }
-
     }
-}
-
-public enum Race
-{
-    AmericanIndian,
-    Asian,
-    Black,
-    HawaiiSouthPacificIslander,
-    White,
-    Other
-}
-
-public class VetStatus
-{
-    public DateTime YearEnteredService { get; set; }
-    public DateTime YearLeftService { get; set; }
-    
-    
-}
-
-public enum WarServedIn
-{
-    WorldWar2,
-    KoreanWar,
-    VietnamWar,
-    DesertStorm,
-    AfghanistanOEF,
-    IraqOIF,
-    OtherTheater
-}
-
-public enum MilitaryBranch
-{
-    Army,
-    AirForce,
-    Marines,
-    Navy
-}
-
-public enum DischargeStatus
-{
-    Honorable,
-    Dishonorable
 }
