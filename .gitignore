@@ -71,5 +71,4 @@ packages\nHibernateProfiler*/
 *.psess
 packages/nHibernateProfiler/log.txt
 
-*/
-Dataset.xlsx
+*/Dataset.xlsx

@@ -1,0 +1,16 @@
+﻿@model HomelessHelper.Models.StaffModel
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>Clients in @Model.Shelter:</h2>
+@foreach (var client in Model.Shelter.Clients)
+{
+    <tr>
+        <td>@Html.DisplayFor(m => client.LastName)</td>
+        <td>@Html.DisplayFor(m => client.FirstName)</td>
+        <td>@Html.DisplayFor(m => client.DateOfBirth)</td>
+    </tr>
+}
+
