@@ -30,7 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="EntityFramework\DatabaseManager.cs" />
+    <Compile Include="EntityFramework\EFConfiguration.cs" />
+    <Compile Include="EntityFramework\Entity.cs" />
+    <Compile Include="EntityFramework\Form.cs" />
+    <Compile Include="EntityFramework\HomelessHelperDbContext.cs" />
     <Compile Include="Domain\Address.cs" />
     <Compile Include="Domain\BasePerson.cs" />
     <Compile Include="Domain\Client.cs" />
@@ -50,6 +58,7 @@
     <Compile Include="Domain\Enum\ShelterType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
