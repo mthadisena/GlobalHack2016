@@ -5,6 +5,7 @@ using HomelessHelper.Core.EntityFramework;
 using HomelessHelper.Models;
 using VetStatus = HomelessHelper.Core.Domain.VetStatus;
 using HomelessHelper.Utility;
+using Microsoft.Ajax.Utilities;
 
 namespace HomelessHelper.Controllers
 {
@@ -24,26 +25,32 @@ namespace HomelessHelper.Controllers
         [HttpPost]
         public ActionResult PostInTakeForm(InTakeModel model)
         {
-            dbContext.Clients.Add(new Client
+            if (ModelState.IsValid)
             {
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                SSN = model.SSN,
-                DateOfBirth = model.DateOfBirth,
-                Race = model.Race,
-                Gender = model.Gender,
-                VetStatus = new VetStatus
+                var clientToAdd = new Client
                 {
-                    YearEnteredService = model.VetStatus.YearEnteredService,
-                    YearLeftService = model.VetStatus.YearLeftService,
-                    MilitaryBranch = model.VetStatus.MilitaryBranch,
-                    DischargeStatus = model.VetStatus.DischargeStatus
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    SSN = model.SSN,
+                    PhoneNumber = model.PhoneNumber,
+                    DateOfBirth = model.DateOfBirth,
+                    Race = model.Race,
+                    Gender = model.Gender,
+                    Ethnicity = model.Ethnicity,
+                    Email = model.Email
+                };
+
+                if (model.VetStatus != null)
+                {
+                    clientToAdd.VetStatus = model.VetStatus;
                 }
 
-            });
-            dbContext.SaveChanges();
-            //TODO: business logic here to find shelter and book avaliable bed
-            return RedirectToAction("Index", "Home");
+                dbContext.Clients.Add(clientToAdd);
+                dbContext.SaveChanges();
+                //TODO: business logic here to find shelter and book avaliable bed
+                return RedirectToAction("Index", "Home");
+            }
+            return Json(false);
         }
 
         [HttpPost]

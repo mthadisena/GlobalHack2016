@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using HomelessHelper.Core.Domain.Enum;
 using HomelessHelper.Core.EntityFramework;
@@ -10,10 +11,18 @@ namespace HomelessHelper.Core.Domain
     [Table("VetStatus")]
     public class VetStatus : Entity
     {
-        public DateTime YearEnteredService { get; set; }
-        public DateTime YearLeftService { get; set; }
-        public MilitaryBranch MilitaryBranch { get; set; }
-        public DischargeStatus DischargeStatus { get; set; }
+        [Display(Name = "Year Entered Service:")]
+        [DataType(DataType.Date)]
+        public DateTime? YearEnteredService { get; set; }
+        [Display(Name = "Year Left Service:")]
+        [DataType(DataType.Date)]
+        public DateTime? YearLeftService { get; set; }
+        [Display(Name = "War Served In:")]
+        public WarServedIn? WarServedIn { get; set; }
+        [Display(Name = "Military Branch:")]
+        public MilitaryBranch? MilitaryBranch { get; set; }
+        [Display(Name = "Discharge Status:")]
+        public DischargeStatus? DischargeStatus { get; set; }
     }
 
     [Table("WarService")]
