@@ -21,8 +21,7 @@ namespace HomelessHelper.Core.Staging
 
         public void Import()
         {
-            var assembly = Assembly.GetExecutingAssembly();
-            var path = Path.Combine(assembly.FullName, "Staging", "SampleDataSet.xlsx");           
+            var path = Path.Combine(AssemblyPath(), "HomelessHelper.Core", "Staging", "SampleDataSet.xlsx");           
             var file = new FileInfo(path);
             using (var app = new ExcelPackage(file))
             {
@@ -36,6 +35,15 @@ namespace HomelessHelper.Core.Staging
                     _context.SaveChanges();
                 }                
             }
+        }
+
+        private static string AssemblyPath()
+        {
+            var codeBase = Assembly.GetExecutingAssembly().CodeBase;
+            var uri = new UriBuilder(codeBase);
+            var almost = Uri.UnescapeDataString(uri.Path);
+            var testPath = Path.GetDirectoryName(almost);
+            return Directory.GetParent(Directory.GetParent(Directory.GetParent(testPath).ToString()).ToString()).ToString();
         }
 
         private Client AssembleClient(ExcelWorksheet workSheet, int rowIndex)

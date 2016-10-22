@@ -59,9 +59,9 @@ namespace HomelessHelper.Controllers
 
             long ssn;
             var trySSN = long.TryParse(searchTerm, out ssn);
-            if (searchTerm.Length == 9 && trySSN)
+            if (searchTerm.Length == 4 && trySSN)
             {
-                return _context.Clients.Where(x => x.SSN == ssn.ToString()).ToList();
+                return _context.Clients.Where(x => x.SSN.Contains(ssn.ToString())).ToList();
             }
 
             return _context.Clients
