@@ -52,6 +52,7 @@
     <Compile Include="Domain\Enum\ClientStatus.cs" />
     <Compile Include="Domain\BedBooking.cs" />
     <Compile Include="Domain\Enum\DateOfBirthType.cs" />
+    <Compile Include="Domain\Enum\DisablingConditions.cs" />
     <Compile Include="Domain\Enum\DischargeStatus.cs" />
     <Compile Include="Domain\Enum\Ethnicity.cs" />
     <Compile Include="Domain\Enum\Gender.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Domain\Enum\NameQuality.cs" />
     <Compile Include="Domain\Enum\Race.cs" />
     <Compile Include="Domain\Enum\SSNDataQuality.cs" />
+    <Compile Include="Domain\Enum\VeteranStatus.cs" />
     <Compile Include="Domain\Enum\WarServedIn.cs" />
     <Compile Include="Domain\VetStatus.cs" />
     <Compile Include="Domain\ShelterAssigned.cs" />
