@@ -11,7 +11,7 @@ namespace HomelessHelper.Core.Domain
         public ResidenceStatusCategory ResidenceStatusCategory { get; set; }
         public TypeOfResidence TypeOfResidence { get; set; }
         public LengthOfStay LengthOfStay { get; set; }
-        public DateTime DateStarted { get; set; }
+        public DateTime? DateStarted { get; set; }
         public TimesHomeless TimesHomeless { get; set; }
         public int MonthsHomeless { get; set; }
     }
