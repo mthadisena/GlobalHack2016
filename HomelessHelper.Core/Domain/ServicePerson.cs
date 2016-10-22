@@ -1,6 +1,9 @@
-﻿namespace HomelessHelper.Core.Domain
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace HomelessHelper.Core.Domain
 {
-    public class ServicePerson:BasePerson
+    [Table("ServicePerson")]
+    public class ServicePerson : BasePerson
     {
         public long Id { get; set; }
         public string Role { get; set; }

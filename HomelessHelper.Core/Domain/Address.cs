@@ -1,5 +1,8 @@
-﻿namespace HomelessHelper.Core.Domain
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace HomelessHelper.Core.Domain
 {
+    [Table("Address")]
     public class Address
     {
         public string AddressLine1 { get; set; }
