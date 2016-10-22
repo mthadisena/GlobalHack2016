@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using HomelessHelper.Models;
 
 namespace HomelessHelper.Controllers
 {
@@ -6,7 +7,7 @@ namespace HomelessHelper.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(new InTakeModel());
         }
     }
 }
