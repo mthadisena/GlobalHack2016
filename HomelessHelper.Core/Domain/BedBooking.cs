@@ -9,6 +9,8 @@ namespace HomelessHelper.Core.Domain
     {
         public Guid ClientId { get; set; }
         public string BedNumber { get; set; }
+        public DateTime? CheckInDate { get; set; }
+        public DateTime? CheckOutDate { get; set; }
        
     }
 }
