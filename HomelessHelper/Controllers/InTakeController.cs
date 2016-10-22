@@ -14,7 +14,7 @@ namespace HomelessHelper.Controllers
         public ActionResult PostInTakeForm(InTakeModel model)
         {
             //TODO: business logic here to find shelter and book avaliable bed
-            return View();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
