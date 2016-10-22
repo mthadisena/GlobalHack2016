@@ -58,6 +58,7 @@
     <Compile Include="Domain\Enum\DischargeStatus.cs" />
     <Compile Include="Domain\Enum\Ethnicity.cs" />
     <Compile Include="Domain\Enum\Gender.cs" />
+    <Compile Include="Domain\Enum\HousingStatus.cs" />
     <Compile Include="Domain\Enum\LengthOfStay.cs" />
     <Compile Include="Domain\Enum\MilitaryBranch.cs" />
     <Compile Include="Domain\Enum\NameQuality.cs" />
@@ -69,7 +70,11 @@
     <Compile Include="Domain\Enum\TypeOfResidence.cs" />
     <Compile Include="Domain\Enum\VeteranStatus.cs" />
     <Compile Include="Domain\Enum\WarServedIn.cs" />
+    <Compile Include="Domain\Enum\Income.cs" />
+    <Compile Include="Domain\IncomeBenefits.cs" />
     <Compile Include="Domain\LivingSituation.cs" />
+    <Compile Include="Domain\Enum\NonCashBenefit.cs" />
+    <Compile Include="Domain\NonCashBenefits.cs" />
     <Compile Include="Domain\VetStatus.cs" />
     <Compile Include="Domain\ShelterAssigned.cs" />
     <Compile Include="Domain\Visit.cs" />
@@ -83,7 +88,10 @@
     <Compile Include="Domain\ServicePerson.cs" />
     <Compile Include="Domain\Shelter.cs" />
     <Compile Include="Domain\Enum\ShelterType.cs" />
+    <Compile Include="Infrastructure\Conventions\CurrencyAttribute.cs" />
+    <Compile Include="Infrastructure\Conventions\LabelOverrideAttribute.cs" />
     <Compile Include="Infrastructure\Conventions\ResidencialCategoryAttribute.cs" />
+    <Compile Include="Infrastructure\Conventions\TextAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\BedFinder.cs" />
     <Compile Include="Service\ShelterFinder.cs" />
