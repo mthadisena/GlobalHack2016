@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Bed.cs" />
+    <Compile Include="Domain\BedBooking.cs" />
     <Compile Include="Domain\Enum\DateOfBirthType.cs" />
     <Compile Include="Domain\Enum\DischargeStatus.cs" />
     <Compile Include="Domain\Enum\Ethnicity.cs" />
