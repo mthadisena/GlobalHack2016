@@ -7,6 +7,7 @@ namespace HomelessHelper.Core.Domain.Enum
         Women,
         WomenWithChildren,
         Youth,
-        LGBT
+        LGBT,
+        Veterans
     }
 }

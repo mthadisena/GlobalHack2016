@@ -26,6 +26,8 @@ namespace HomelessHelper.Controllers
         [HttpPost]
         public ActionResult PostInTakeForm(InTakeModel model)
         {
+            ShelterType shelterType = ShelterType.Men;
+
             var client = new Client
             {
                 FirstName = model.FirstName,
@@ -47,8 +49,32 @@ namespace HomelessHelper.Controllers
                 }
             };
             dbContext.Clients.Add(client);
-             
-            var shelterMatcherResponse = new ShelterMatcher().Match(client, ShelterType.Men, dbContext);
+            if (model.Gender == Gender.Male)
+            {
+                shelterType = ShelterType.Men;
+            }
+            else if (model.Gender == Gender.Female)
+            {
+                shelterType = ShelterType.Women;
+            }
+            else if (model.Gender == Gender.ClientDoesNotKnow)
+            {
+                shelterType = ShelterType.Family;
+            }
+            else if (model.Gender == Gender.TransgenderFemaleToMale)
+            {
+                shelterType = ShelterType.LGBT;
+            }
+            else if (model.Gender == Gender.TransgenderMaleToFemale)
+            {
+                shelterType = ShelterType.LGBT;
+            }
+            if (model.IsVet)
+            {
+                shelterType = ShelterType.Veterans;
+            }
+
+            var shelterMatcherResponse = new ShelterMatcher().Match(client, shelterType, dbContext);
 
             dbContext.SaveChanges();
 
