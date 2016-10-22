@@ -62,6 +62,7 @@
     <Compile Include="Domain\Enum\SSNDataQuality.cs" />
     <Compile Include="Domain\Enum\VeteranStatus.cs" />
     <Compile Include="Domain\Enum\WarServedIn.cs" />
+    <Compile Include="Domain\LivingSituation.cs" />
     <Compile Include="Domain\VetStatus.cs" />
     <Compile Include="Domain\ShelterAssigned.cs" />
     <Compile Include="Domain\Visit.cs" />
