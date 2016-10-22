@@ -2,7 +2,7 @@
 
 namespace HomelessHelper.Core.Domain.Enum
 {
-    public enum ResidenceHeader
+    public enum ResidenceStatusCategory
     {
         LiterallyHomeless,
         InstitutionalSituation,

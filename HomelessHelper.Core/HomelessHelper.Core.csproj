@@ -56,10 +56,14 @@
     <Compile Include="Domain\Enum\DischargeStatus.cs" />
     <Compile Include="Domain\Enum\Ethnicity.cs" />
     <Compile Include="Domain\Enum\Gender.cs" />
+    <Compile Include="Domain\Enum\LengthOfStay.cs" />
     <Compile Include="Domain\Enum\MilitaryBranch.cs" />
     <Compile Include="Domain\Enum\NameQuality.cs" />
     <Compile Include="Domain\Enum\Race.cs" />
+    <Compile Include="Domain\Enum\ResidenceStatusCategory.cs" />
     <Compile Include="Domain\Enum\SSNDataQuality.cs" />
+    <Compile Include="Domain\Enum\TimesHomeless.cs" />
+    <Compile Include="Domain\Enum\TypeOfResidence.cs" />
     <Compile Include="Domain\Enum\VeteranStatus.cs" />
     <Compile Include="Domain\Enum\WarServedIn.cs" />
     <Compile Include="Domain\LivingSituation.cs" />
@@ -76,9 +80,11 @@
     <Compile Include="Domain\ServicePerson.cs" />
     <Compile Include="Domain\Shelter.cs" />
     <Compile Include="Domain\Enum\ShelterType.cs" />
+    <Compile Include="Infrastructure\Conventions\ResidencialCategoryAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Staging\Sample Dataset.xlsx" />
   </ItemGroup>

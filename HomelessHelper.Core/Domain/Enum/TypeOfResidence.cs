@@ -1,16 +1,62 @@
-﻿using HomelessHelper.Core.Infrastructure.Conventions;
+﻿using System.ComponentModel;
+using HomelessHelper.Core.Infrastructure.Conventions;
 
 namespace HomelessHelper.Core.Domain.Enum
 {
     public enum TypeOfResidence
     {
-        [ProductCategory(ResidenceHeader.LiterallyHomeless)]
+        [ResidencialCategory(ResidenceStatusCategory.LiterallyHomeless)]
         PlaceNotMeantForHabitation,
-        [ProductCategory(ResidenceHeader.LiterallyHomeless)]
+        [ResidencialCategory(ResidenceStatusCategory.LiterallyHomeless)]
         EmergencyShelter,
-        [ProductCategory(ResidenceHeader.LiterallyHomeless)]
+        [ResidencialCategory(ResidenceStatusCategory.LiterallyHomeless)]
         SafeHaven,
-        [ProductCategory(ResidenceHeader.LiterallyHomeless)]
-        InterimHousing
+        [ResidencialCategory(ResidenceStatusCategory.LiterallyHomeless)]
+        InterimHousing,
+
+        [ResidencialCategory(ResidenceStatusCategory.InstitutionalSituation)]
+        FosterCareHome,
+        [ResidencialCategory(ResidenceStatusCategory.InstitutionalSituation)]
+        HospitalOrOtherResidentialMedicalFacility,
+        [ResidencialCategory(ResidenceStatusCategory.InstitutionalSituation)]
+        [Description("Jail, Prison, or Juvenile Detention Facility")]
+        JailPrisonOrJuvenileDetentionFacility,
+        [ResidencialCategory(ResidenceStatusCategory.InstitutionalSituation)]
+        [Description("Long-Term Care Facility")]
+        LongTermCareFacility,
+        [ResidencialCategory(ResidenceStatusCategory.InstitutionalSituation)]
+        PsychiatricHospitalOrOtherPsychiatricFacility,
+        [ResidencialCategory(ResidenceStatusCategory.InstitutionalSituation)]
+        SubstanceAbuseTreatmentFacilityOrDetoxCenter,
+
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        [Description("Hotel or Motel Paid for Without Emergency Shelter Voucher")]
+        HotelOrMotel,
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        OwnedByClientWithoutHousingSubsidy,
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        OwnedByClientWithHousingSubsidy,
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        PermanentHousingForFormerlyHomelessPersons,
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        RentalByClientWithoutHosingSubsidy,
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        RentalByClientWithVASHSubsidy,
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        RentalByClientWithGPDTIPSubdidy,
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        RentalByClientWithHousingSubsidy,
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        ResidentialProjectOrHalfwayHouse,
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        StayingOrLivingWithFamily,
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        StayingOrLivingWithFriend,
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        TransitionalHousing,
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        ClientDoesNotKnow,
+        [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
+        ClientRefused,
     }
 }

@@ -8,7 +8,7 @@ namespace HomelessHelper.Core.Domain
     [Table("LivingSituation")]
     public class LivingSituation : Entity
     {
-        public ResidenceHeader ResidenceHeader { get; set; }
+        public ResidenceStatusCategory ResidenceStatusCategory { get; set; }
         public TypeOfResidence TypeOfResidence { get; set; }
         public LengthOfStay LengthOfStay { get; set; }
         public DateTime DateStarted { get; set; }
