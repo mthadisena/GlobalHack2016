@@ -5,41 +5,60 @@
 
 <h2>Intake</h2>
 
-<div class="intake-form">
-    <div class="col-md-10">
-        @Html.LabelFor(model => model.FirstName)
-        @Html.EditorFor(model => model.FirstName)
-        @Html.ValidationMessageFor(model => model.FirstName)
+
+@using (Ajax.BeginForm("PostInTakeForm", new AjaxOptions { InsertionMode = InsertionMode.Replace }))
+{
+    <div class="intake-form">
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName)<br/>
+            @Html.EditorFor(model => model.FirstName)<br />
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName)<br />
+            @Html.EditorFor(model => model.LastName)<br />
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SSN)<br />
+            @Html.EditorFor(model => model.SSN)<br />
+            @Html.ValidationMessageFor(model => model.SSN)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateOfBirth)<br />
+            @Html.EditorFor(model => model.DateOfBirth)<br />
+            @Html.ValidationMessageFor(model => model.DateOfBirth)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Race)<br />
+            @Html.EnumDropDownListFor(model => model.Race)<br />
+            @Html.ValidationMessageFor(model => model.Race)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gender)<br />
+            @Html.EnumDropDownListFor(model => model.Gender)<br />
+            @Html.ValidationMessageFor(model => model.Gender)
+        </div>
+        <div class="form-group">
+            @Html.Label("Are you a Veteran?")
+            @Html.CheckBox("isVet", new { @onclick = "showHide('vetStatus')" })
+        </div>
+        @*        if IsVet, show rest of fields*@
+        <div id="vetStatus">
+            <div class="form-group">
+                @Html.LabelFor(model => model.VetStatus.YearEnteredService)
+                @Html.EditorFor(model => model.VetStatus.YearEnteredService)
+                @Html.ValidationMessageFor(model => model.VetStatus.YearEnteredService)
+            </div>
+            <div class="form-group" style="">
+                @Html.LabelFor(model => model.VetStatus.YearLeftService)
+                @Html.EditorFor(model => model.VetStatus.YearLeftService)
+                @Html.ValidationMessageFor(model => model.VetStatus.YearLeftService)
+            </div>
+        </div>
+        <input type="submit" value="Submit" />
     </div>
-    <div class="col-md-10">
-        @Html.LabelFor(model => model.LastName)
-        @Html.EditorFor(model => model.LastName)
-        @Html.ValidationMessageFor(model => model.LastName)
-    </div>
-    <div class="col-md-10">
-        @Html.LabelFor(model => model.SSN)
-        @Html.EditorFor(model => model.SSN)
-        @Html.ValidationMessageFor(model => model.SSN)
-    </div>
-    <div class="col-md-10">
-        @Html.LabelFor(model => model.DateOfBirth)
-        @Html.EditorFor(model => model.DateOfBirth)
-        @Html.ValidationMessageFor(model =>  model.DateOfBirth)
-    </div>
-    <div class="col-md-10">
-        @Html.LabelFor(model => model.Race)
-        @Html.EditorFor(model => model.Race)
-        @Html.ValidationMessageFor(model => model.Race)
-    </div>
-    <div class="col-md-10">
-        @Html.LabelFor(model => model.Gender)
-        @Html.EditorFor(model => model.Gender)
-        @Html.ValidationMessageFor(model => model.Gender)
-    </div>
-    <div class="col-md-10">
-        @Html.LabelFor(model => model.VetStatus.IsVet)
-        @Html.EditorFor(model => model.VetStatus.IsVet)
-        @Html.ValidationMessageFor(model => model.VetStatus.IsVet)
-    </div>
-@*        if IsVet, show rest of fields*@
-</div>
+}
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript" src="@Url.Content("~/Scripts/intake.js")"></script>

@@ -2,12 +2,10 @@
 
 namespace HomelessHelper.Core.Domain.Enum
 {
-    public enum TimesHomeless
+    public enum Income
     {
-        OneTime,
-        TwoTimes,
-        ThreeTimes,
-        FourOrMoreTimes,
+        No,
+        Yes,
         [Description("Client Doesn't Know")]
         ClientDoesNotKnow,
         ClientRefused

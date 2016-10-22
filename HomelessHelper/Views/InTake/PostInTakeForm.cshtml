@@ -1,0 +1,19 @@
+﻿@model ShelterMatcherResponse
+
+@{
+    ViewBag.Title = "Confirmation";
+}
+<br/>
+@if (Model.IsBooked)
+{
+    <div class="alert alert-success" role="alert">
+            Congratulations! <b>@Model.Name</b> is now assigned to @Model.Message
+        </div>
+
+}
+else
+{ 
+    <div class="alert alert-danger" role="alert">
+        Sorry <b>@Model.Name</b>,  @Model.Message  We will contact you soon.
+    </div>
+} 

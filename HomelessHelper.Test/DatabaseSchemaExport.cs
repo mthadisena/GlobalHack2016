@@ -1,4 +1,6 @@
-﻿using HomelessHelper.Core.Domain;
+﻿using System.Collections.Generic;
+using HomelessHelper.Core.Domain;
+using HomelessHelper.Core.Domain.Enum;
 using HomelessHelper.Core.EntityFramework;
 using HomelessHelper.Core.Staging;
 using NUnit.Framework;
@@ -23,7 +25,10 @@ namespace HomelessHelper.Test
             var sampleImporter = new DataImporter(_context);
             sampleImporter.Import();
 
-            var shelter = new Shelter
+        [Test]
+        public void Stage()
+        { 
+            var shelter1 = new Shelter
             {
                 Name = "Really cool shelter"
             };

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using HomelessHelper.Core.Domain;
@@ -10,16 +12,32 @@ namespace HomelessHelper.Core.Service
 
     public interface IBedFinder
     {
-        Bed Find(Guid shelterID, DateTime checkinDate);
+        List<Bed> Find(Guid shelterID, DateTime checkinDate);
     }
     public class RoomBedFinder: IBedFinder
     {  
-        public Bed Find(Guid shelterID, DateTime checkinDate)
+        public List<Bed> Find(Guid shelterID, DateTime checkinDate)
         {
             var dbContext = new HomelessHelperDbContext();
-            var shelter = dbContext.Shelters.FirstOrDefault(x => x.Id == shelterID);
+            var shelter = dbContext.Shelters.Where(x => x.Id == shelterID).Include(x => x.Beds).FirstOrDefault();
 
-           return new Bed();
+            var beds = new List<Bed>();
+            foreach (var bed in shelter.Beds)
+            {
+                
+                if (shelter.Bookings == null)
+                {
+                    beds.Add(bed);
+                }
+                else
+                {
+                    if (!shelter.Bookings.Any(x => x.BedNumber == bed.Number && x.CheckOutDate == null))
+                    { 
+                        beds.Add(bed);
+                    }
+                }
+            }
+           return beds;
         }
     }
 }
