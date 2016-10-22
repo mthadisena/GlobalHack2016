@@ -4,6 +4,6 @@
     {
         Staying,
         Moved,
-        NotReturned,
+        NotReturned
     }
 }
