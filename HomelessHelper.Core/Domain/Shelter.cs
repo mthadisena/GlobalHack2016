@@ -8,19 +8,12 @@ namespace HomelessHelper.Core.Domain
     [Table("Shelter")]
     public class Shelter : Entity
     {
-        public Shelter()
-        {
-            Clients = new List<Client>();
-            Beds = new List<Bed>();
-
-        }
-
         public string Name { get; set; }
         public ShelterType Type { get; set; }
         public int NumberOfBeds => Beds.Count;
-        public List<Client> Clients { get; set; }
-        public List<Bed> Beds { get; set; }
-        public List<BedBooking> Bookings { get; set; }
+        public List<Client> Clients { get; set; } = new List<Client>();
+        public List<Bed> Beds { get; set; } = new List<Bed>();
+        public List<BedBooking> Bookings { get; set; } = new List<BedBooking>();
         public Address Address { get; set; }
 
         public void AddBed(Bed bed)

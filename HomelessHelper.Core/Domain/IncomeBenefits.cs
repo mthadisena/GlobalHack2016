@@ -10,7 +10,7 @@ namespace HomelessHelper.Core.Domain
     public class IncomeBenefits : Entity
     {
         public long IncomeId { get; set; }
-        public DateTime InformationDate { get; set; }
+        public DateTime? InformationDate { get; set; }
         public Income Income { get; set; }
         public bool EarnedIncomeFlag { get; set; }
         [Currency]
