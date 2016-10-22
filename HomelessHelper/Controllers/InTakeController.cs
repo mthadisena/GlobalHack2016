@@ -12,7 +12,7 @@ namespace HomelessHelper.Controllers
 {
     public class InTakeController : Controller
     {
-        private HomelessHelperDbContext dbContext;
+        private readonly HomelessHelperDbContext dbContext;
 
         public InTakeController()
         {

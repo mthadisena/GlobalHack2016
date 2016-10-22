@@ -37,7 +37,9 @@ namespace HomelessHelper.Core.Service
                     {
                         IsBooked = true,
                         Message = $"Shelter Name : {shelter[0].Name}. Bed Number: {availableBeds[0].Number}",
-                        Name = $"{client.FirstName} {client.LastName}"
+                        Name = $"{client.FirstName} {client.LastName}",
+                        Address = shelter[0].Address
+
                     };
                 }
                 return new ShelterMatcherResponse
@@ -60,4 +62,5 @@ public class ShelterMatcherResponse
     public string Name { get; set; }
     public bool IsBooked { get; set; }
     public string Message { get; set; }
+    public Address Address { get; set; }
 }
