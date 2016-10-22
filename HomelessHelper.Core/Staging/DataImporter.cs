@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.Domain.Enum;
 using HomelessHelper.Core.EntityFramework;
@@ -20,7 +21,9 @@ namespace HomelessHelper.Core.Staging
 
         public void Import()
         {
-            var file = new FileInfo(@"C:\Projects\GlobalHack2016\HomelessHelper.Core\Staging\SampleDataSet.xlsx");
+            var assembly = Assembly.GetExecutingAssembly();
+            var path = Path.Combine(assembly.FullName, "Staging", "SampleDataSet.xlsx");           
+            var file = new FileInfo(path);
             using (var app = new ExcelPackage(file))
             {
                 var workbook = app.Workbook;
