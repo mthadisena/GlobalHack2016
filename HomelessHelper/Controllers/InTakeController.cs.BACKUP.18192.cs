@@ -23,6 +23,7 @@ namespace HomelessHelper.Controllers
         [HttpPost]
         public ActionResult PostInTakeForm(InTakeModel model)
         {
+<<<<<<< HEAD
             dbContext.Clients.Add(new Client
             {
                 FirstName = model.FirstName,
@@ -41,8 +42,11 @@ namespace HomelessHelper.Controllers
 
             });
             dbContext.SaveChanges();
+            return View();
+=======
             //TODO: business logic here to find shelter and book avaliable bed
             return RedirectToAction("Index", "Home");
+>>>>>>> 536e44e8cd3ce1ad29da60e216e8747e4d8c28d0
         }
     }
 }

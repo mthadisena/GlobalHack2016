@@ -59,7 +59,7 @@ namespace HomelessHelper.Core.Domain.Enum
         [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
         StayingOrLivingWithFamily,
         [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
-        StayingOrLivingWithFriend,
+        StayingOrLivingWithFriends,
         [ResidencialCategory(ResidenceStatusCategory.TransitionalPermanentSituation)]
         [Description("Transitional Housing for Homeless Persons")]
         TransitionalHousing,

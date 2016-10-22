@@ -41,8 +41,7 @@ namespace HomelessHelper.Controllers
 
             });
             dbContext.SaveChanges();
-            //TODO: business logic here to find shelter and book avaliable bed
-            return RedirectToAction("Index", "Home");
+            return View();
         }
     }
 }
