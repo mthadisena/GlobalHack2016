@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using HomelessHelper.Core.Domain;
+using HomelessHelper.Core.Domain.Enum;
 using HomelessHelper.Core.EntityFramework;
 using NUnit.Framework;
 
@@ -23,6 +24,7 @@ namespace HomelessHelper.Test
             var shelter = new Shelter
             {
                 Name = "Really cool shelter",
+                Type = ShelterType.Men,
                 Beds = new List<Bed>
                 {
                    new Bed
