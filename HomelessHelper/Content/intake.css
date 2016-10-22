@@ -1,0 +1,9 @@
+.intake-form label{
+    float: left;
+    margin-right: 0.5em;
+}
+
+.intake-from input{
+  float: left;
+  margin-right: 0.5em;
+}
