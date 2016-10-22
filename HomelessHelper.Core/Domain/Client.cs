@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using HomelessHelper.Core.Domain.Enum;
 
@@ -27,12 +28,8 @@ namespace HomelessHelper.Core.Domain
         public Race Race { get; set; }
         public Ethnicity Ethnicity { get; set; }
         public VetStatus VetStatus { get; set; }
+        public List<WarService> WarServices { get; set; }
         public int BedNumber { get; set; }
-
         public ClientStatus ClientStatus { get; set; }
-    }
-
-    public class ClientStatus
-    {
     }
 }

@@ -12,6 +12,8 @@ namespace HomelessHelper.Core.EntityFramework
         public DbSet<Client> Clients { get; set; }
         public DbSet<Bed> Beds { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<WarService> WarService { get; set; }
+        public DbSet<VetStatus> VetStatus { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
