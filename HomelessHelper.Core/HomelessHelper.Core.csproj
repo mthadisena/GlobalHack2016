@@ -44,10 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Enum\ClientStatus.cs" />
+    <Compile Include="Domain\Enum\Gender.cs" />
+    <Compile Include="Domain\Bed.cs" />
     <Compile Include="Domain\Enum\DateOfBirthType.cs" />
+    <Compile Include="Domain\Enum\DischargeStatus.cs" />
+    <Compile Include="Domain\Enum\MilitaryBranch.cs" />
     <Compile Include="Domain\Enum\NameQuality.cs" />
     <Compile Include="Domain\Enum\Race.cs" />
     <Compile Include="Domain\Enum\SSNDataQuality.cs" />
+    <Compile Include="Domain\Enum\WarServedIn.cs" />
+    <Compile Include="Domain\VetStatus.cs" />
     <Compile Include="Domain\ShelterAssigned.cs" />
     <Compile Include="EntityFramework\DatabaseManager.cs" />
     <Compile Include="EntityFramework\EFConfiguration.cs" />

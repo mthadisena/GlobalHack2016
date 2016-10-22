@@ -1,4 +1,5 @@
 ﻿using System;
+using HomelessHelper.Core.Domain.Enum;
 
 namespace HomelessHelper.Models
 {
@@ -11,8 +12,7 @@ namespace HomelessHelper.Models
         public Race Race { get; set; }
         public bool Gender { get; set; }
         public VetStatus VetStatus { get; set; }
-
-
+        public Ethnicity Ethnicity { get; set; }
     }
 }
 
@@ -28,7 +28,6 @@ public enum Race
 
 public class VetStatus
 {
-    public bool IsVet { get; set; }
     public DateTime YearEnteredService { get; set; }
     public DateTime YearLeftService { get; set; }
     
@@ -59,4 +58,3 @@ public enum DischargeStatus
     Honorable,
     Dishonorable
 }
-
