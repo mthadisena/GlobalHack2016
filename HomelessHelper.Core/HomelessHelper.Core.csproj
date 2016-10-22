@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Bed.cs" />
+    <Compile Include="Domain\ClientLocation.cs" />
     <Compile Include="Domain\Enum\ClientStatus.cs" />
     <Compile Include="Domain\BedBooking.cs" />
     <Compile Include="Domain\Enum\DateOfBirthType.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Domain\Enum\MilitaryBranch.cs" />
     <Compile Include="Domain\Enum\NameQuality.cs" />
     <Compile Include="Domain\Enum\Race.cs" />
+    <Compile Include="Domain\Enum\RelationshipToHeadOfHousehold.cs" />
     <Compile Include="Domain\Enum\ResidenceStatusCategory.cs" />
     <Compile Include="Domain\Enum\SSNDataQuality.cs" />
     <Compile Include="Domain\Enum\TimesHomeless.cs" />

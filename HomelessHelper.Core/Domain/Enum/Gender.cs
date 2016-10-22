@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace HomelessHelper.Core.Domain.Enum
 {
@@ -6,12 +7,11 @@ namespace HomelessHelper.Core.Domain.Enum
     {
         Female,
         Male,
+        [Display(Name = "Male-Female Transgender")]
         TransgenderMaleToFemale,
+        [Display(Name = "Female-Male Transgender")]
         TransgenderFemaleToMale,
-        [Description("Doesn't Identify as Male, Female, or Transgender")]
-        DoesNotIdentifyAsMaleFemaleOrTransgender,
-        [Description("Client Doesn't Know")]
-        ClientDoesNotKnow,
+        [Display(Name = "Choose not to disclose")]
         ClientRefused,
         Other
     }
