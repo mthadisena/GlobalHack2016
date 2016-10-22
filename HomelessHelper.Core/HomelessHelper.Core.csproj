@@ -58,6 +58,7 @@
     <Compile Include="Domain\Enum\DischargeStatus.cs" />
     <Compile Include="Domain\Enum\Ethnicity.cs" />
     <Compile Include="Domain\Enum\Gender.cs" />
+    <Compile Include="Domain\Enum\HousingStatus.cs" />
     <Compile Include="Domain\Enum\LengthOfStay.cs" />
     <Compile Include="Domain\Enum\MilitaryBranch.cs" />
     <Compile Include="Domain\Enum\NameQuality.cs" />
