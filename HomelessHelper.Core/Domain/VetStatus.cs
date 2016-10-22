@@ -10,7 +10,6 @@ namespace HomelessHelper.Core.Domain
     [Table("VetStatus")]
     public class VetStatus : Entity
     {
-        public Client Client { get; set; }
         public DateTime YearEnteredService { get; set; }
         public DateTime YearLeftService { get; set; }
         public MilitaryBranch MilitaryBranch { get; set; }
