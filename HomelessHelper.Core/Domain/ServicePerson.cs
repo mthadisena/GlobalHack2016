@@ -3,9 +3,8 @@
 namespace HomelessHelper.Core.Domain
 {
     [Table("ServicePerson")]
-    public class ServicePerson : BasePerson
+    public class ServicePerson : Person
     {
-        public long Id { get; set; }
         public string Role { get; set; }
     }
 }
