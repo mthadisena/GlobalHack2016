@@ -44,13 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Domain\Bed.cs" />
+=======
+>>>>>>> 832dc6ffd6c60729cf591869b0d3b038d5845a26
     <Compile Include="Domain\Enum\DateOfBirthType.cs" />
     <Compile Include="Domain\Enum\NameQuality.cs" />
     <Compile Include="Domain\Enum\Race.cs" />
     <Compile Include="Domain\Enum\SSNDataQuality.cs" />
     <Compile Include="Domain\ShelterAssigned.cs" />
+<<<<<<< HEAD
+=======
     <Compile Include="Domain\Visit.cs" />
+>>>>>>> 832dc6ffd6c60729cf591869b0d3b038d5845a26
     <Compile Include="EntityFramework\DatabaseManager.cs" />
     <Compile Include="EntityFramework\EFConfiguration.cs" />
     <Compile Include="EntityFramework\Entity.cs" />

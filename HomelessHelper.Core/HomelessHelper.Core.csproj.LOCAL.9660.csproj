@@ -50,7 +50,6 @@
     <Compile Include="Domain\Enum\Race.cs" />
     <Compile Include="Domain\Enum\SSNDataQuality.cs" />
     <Compile Include="Domain\ShelterAssigned.cs" />
-    <Compile Include="Domain\Visit.cs" />
     <Compile Include="EntityFramework\DatabaseManager.cs" />
     <Compile Include="EntityFramework\EFConfiguration.cs" />
     <Compile Include="EntityFramework\Entity.cs" />
