@@ -11,6 +11,7 @@ namespace HomelessHelper.Core.Domain
         public string BedNumber { get; set; }
         public DateTime? CheckInDate { get; set; }
         public DateTime? CheckOutDate { get; set; }
+        public Shelter Shelter { get; set; }
        
     }
 }

@@ -25,8 +25,11 @@ namespace HomelessHelper.Controllers
 
         [HttpPost]
         public ActionResult PostInTakeForm(InTakeModel model)
-        {
-            if (ModelState.IsValid)
+        { 
+            ShelterType shelterType = ShelterType.Men;
+
+           
+            if (ModelState.IsValid) 
             {
                 var clientToAdd = new Client
                 {
@@ -45,12 +48,38 @@ namespace HomelessHelper.Controllers
                 {
                     clientToAdd.VetStatus = model.VetStatus;
                 }
-            	dbContext.Clients.Add(clientToAdd);
-            	var shelterMatcherResponse = new ShelterMatcher().Match(clientToAdd, ShelterType.Men, dbContext);
-            	dbContext.SaveChanges();
 
-            	return View(shelterMatcherResponse);
-            }
+                if (model.Gender == Gender.Male)
+                {
+                    shelterType = ShelterType.Men;
+                }
+                else if (model.Gender == Gender.Female)
+                {
+                    shelterType = ShelterType.Women;
+                }
+                else if (model.Gender == Gender.ClientDoesNotKnow)
+                {
+                    shelterType = ShelterType.Family;
+                }
+                else if (model.Gender == Gender.TransgenderFemaleToMale)
+                {
+                    shelterType = ShelterType.LGBT;
+                }
+                else if (model.Gender == Gender.TransgenderMaleToFemale)
+                {
+                    shelterType = ShelterType.LGBT;
+                }
+                if (model.IsVet)
+                {
+                    shelterType = ShelterType.Veterans;
+                }
+
+
+                dbContext.Clients.Add(clientToAdd);
+                var shelterMatcherResponse = new ShelterMatcher().Match(clientToAdd, shelterType, dbContext);
+                dbContext.SaveChanges();
+                return View(shelterMatcherResponse);
+            }; 
             return Json(false);
         }
 
