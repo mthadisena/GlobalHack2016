@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.Domain.Enum;
 
 namespace HomelessHelper.Models
@@ -13,7 +14,18 @@ namespace HomelessHelper.Models
         [Required]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
+
+        [RegularExpression(@"^$|^\d{9}|\d{3}-\d{2}-\d{4}$", ErrorMessage = "Invalid Social Security Number")]
         public string SSN { get; set; }
+
+        [RegularExpression(@"^$|^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$", ErrorMessage = "Invalid Phone Number")]
+        [DataType(DataType.PhoneNumber)]
+        public string PhoneNumber { get; set; }
+
+        [RegularExpression(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", ErrorMessage = "Invalid Social Security Number")]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+        
         [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
 
@@ -21,5 +33,6 @@ namespace HomelessHelper.Models
         public Gender Gender { get; set; }
         public VetStatus VetStatus { get; set; }
         public Ethnicity Ethnicity { get; set; }
+        public bool IsVet { get; set; }
     }
 }

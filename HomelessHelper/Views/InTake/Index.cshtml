@@ -25,9 +25,19 @@
             @Html.ValidationMessageFor(model => model.SSN)
         </div>
         <div class="form-group">
+            @Html.LabelFor(model => model.PhoneNumber)<br />
+            @Html.EditorFor(model => model.PhoneNumber)<br />
+            @Html.ValidationMessageFor(model => model.PhoneNumber)
+        </div>
+        <div class="form-group">
             @Html.LabelFor(model => model.DateOfBirth)<br />
             @Html.EditorFor(model => model.DateOfBirth)<br />
             @Html.ValidationMessageFor(model => model.DateOfBirth)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Email)<br />
+            @Html.EditorFor(model => model.Email)<br />
+            @Html.ValidationMessageFor(model => model.Email)
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.Race)<br />
@@ -46,19 +56,36 @@
         @*        if IsVet, show rest of fields*@
         <div id="vetStatus">
             <div class="form-group">
-                @Html.LabelFor(model => model.VetStatus.YearEnteredService)
-                @Html.EditorFor(model => model.VetStatus.YearEnteredService)
+                @Html.LabelFor(model => model.VetStatus.YearEnteredService)<br />
+                @Html.EditorFor(model => model.VetStatus.YearEnteredService)<br />
                 @Html.ValidationMessageFor(model => model.VetStatus.YearEnteredService)
             </div>
             <div class="form-group" style="">
-                @Html.LabelFor(model => model.VetStatus.YearLeftService)
-                @Html.EditorFor(model => model.VetStatus.YearLeftService)
+                @Html.LabelFor(model => model.VetStatus.YearLeftService)<br />
+                @Html.EditorFor(model => model.VetStatus.YearLeftService)<br />
                 @Html.ValidationMessageFor(model => model.VetStatus.YearLeftService)
+            </div>
+            <div class="form-group" style="">
+                @Html.LabelFor(model => model.VetStatus.WarServedIn)<br />
+                @Html.EnumDropDownListFor(model => model.VetStatus.WarServedIn)<br />
+                @Html.ValidationMessageFor(model => model.VetStatus.WarServedIn)
+            </div>
+            <div class="form-group" style="">
+                @Html.LabelFor(model => model.VetStatus.MilitaryBranch)<br />
+                @Html.EnumDropDownListFor(model => model.VetStatus.MilitaryBranch)<br />
+                @Html.ValidationMessageFor(model => model.VetStatus.MilitaryBranch)
+            </div>
+            <div class="form-group" style="">
+                @Html.LabelFor(model => model.VetStatus.DischargeStatus)<br />
+                @Html.EnumDropDownListFor(model => model.VetStatus.DischargeStatus)<br />
+                @Html.ValidationMessageFor(model => model.VetStatus.DischargeStatus)
             </div>
         </div>
         <input type="submit" value="Submit" />
     </div>
 }
 
-@Scripts.Render("~/bundles/jquery")
-<script type="text/javascript" src="@Url.Content("~/Scripts/intake.js")"></script>
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/intake")    
+}

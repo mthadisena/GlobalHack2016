@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.Domain.Enum;
@@ -16,7 +17,7 @@ namespace HomelessHelper.Core.Service
        public List<Shelter> Find( ShelterType shelterType)
        {
             var dbContext = new HomelessHelperDbContext();
-            return dbContext.Shelters.Where(x => x.Type == shelterType).ToList();
+            return dbContext.Shelters.Where(x => x.Type == shelterType).Include(x => x.Bookings).Include(x => x.Address).ToList();
        }
    }
 }

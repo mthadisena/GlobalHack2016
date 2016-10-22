@@ -25,36 +25,64 @@ namespace HomelessHelper.Controllers
 
         [HttpPost]
         public ActionResult PostInTakeForm(InTakeModel model)
-        {
-            var client = new Client
+        { 
+            ShelterType shelterType = ShelterType.Men;
+
+           
+            if (ModelState.IsValid) 
             {
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                SSN = model.SSN,
-                DateOfBirth = model.DateOfBirth,
-                Race = model.Race,
-                Gender = model.Gender,
-                VetStatus = new VetStatus
+                var clientToAdd = new Client
                 {
-                    YearEnteredService = model.VetStatus.YearEnteredService,
-                    YearLeftService = model.VetStatus.YearLeftService,
-                    MilitaryBranch = model.VetStatus.MilitaryBranch,
-                    DischargeStatus = model.VetStatus.DischargeStatus
-                },
-                LivingSituation = new LivingSituation
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    SSN = model.SSN,
+                    PhoneNumber = model.PhoneNumber,
+                    DateOfBirth = model.DateOfBirth,
+                    Race = model.Race,
+                    Gender = model.Gender,
+                    Ethnicity = model.Ethnicity,
+                    Email = model.Email
+                };
+
+                if (model.VetStatus != null)
                 {
-                    DateStarted = DateTime.Today
+                    clientToAdd.VetStatus = model.VetStatus;
                 }
-            };
-            dbContext.Clients.Add(client);
-             
-            var shelterMatcherResponse = new ShelterMatcher().Match(client, ShelterType.Men, dbContext);
 
-            dbContext.SaveChanges();
+                if (model.Gender == Gender.Male)
+                {
+                    shelterType = ShelterType.Men;
+                }
+                else if (model.Gender == Gender.Female)
+                {
+                    shelterType = ShelterType.Women;
+                }
+                else if (model.Gender == Gender.ClientDoesNotKnow)
+                {
+                    shelterType = ShelterType.Family;
+                }
+                else if (model.Gender == Gender.TransgenderFemaleToMale)
+                {
+                    shelterType = ShelterType.LGBT;
+                }
+                else if (model.Gender == Gender.TransgenderMaleToFemale)
+                {
+                    shelterType = ShelterType.LGBT;
+                }
+                if (model.IsVet)
+                {
+                    shelterType = ShelterType.Veterans;
+                }
 
-            return View(shelterMatcherResponse);
+
+                dbContext.Clients.Add(clientToAdd);
+                var shelterMatcherResponse = new ShelterMatcher().Match(clientToAdd, shelterType, dbContext);
+                dbContext.SaveChanges();
+                return View(shelterMatcherResponse);
+            }; 
+            return Json(false);
         }
-        
+
         [HttpPost]
         public ActionResult Save(InTakeModel model)
         {
