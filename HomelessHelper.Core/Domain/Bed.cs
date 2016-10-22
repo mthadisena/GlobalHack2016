@@ -1,6 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using HomelessHelper.Core.Domain.Enum;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using HomelessHelper.Core.EntityFramework;
 
 namespace HomelessHelper.Core.Domain

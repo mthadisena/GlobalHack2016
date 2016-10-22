@@ -19,7 +19,7 @@ namespace HomelessHelper.Core.Service
         public List<Bed> Find(Guid shelterID, DateTime checkinDate)
         {
             var dbContext = new HomelessHelperDbContext();
-            var shelter = dbContext.Shelters.Where(x => x.Id == shelterID).Include(x => x.Beds).FirstOrDefault();
+            var shelter = dbContext.Shelters.Where(x => x.Id == shelterID).Include(x => x.Beds).Include(x => x.Bookings).FirstOrDefault();
 
             var beds = new List<Bed>();
             foreach (var bed in shelter.Beds)
