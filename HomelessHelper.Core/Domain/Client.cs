@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using HomelessHelper.Core.Domain.Enum;
+using HomelessHelper.Core.Infrastructure.Conventions;
 
 namespace HomelessHelper.Core.Domain
 {
@@ -30,6 +31,7 @@ namespace HomelessHelper.Core.Domain
         public DisablingConditions DisablingConditions { get; set; }
         public LivingSituation LivingSituation { get; set; }
         public DestinationType Destination { get; set; }
+        [Text]
         public string DestinationText { get; set; }
         public RelationshipToHeadOfHousehold HeadOfHousehold { get; set; }
 
@@ -39,5 +41,6 @@ namespace HomelessHelper.Core.Domain
         public string Skills { get; set; }
 
         public HousingStatus HousingStatus { get; set; }
+        public IncomeBenefits IncomeBenefits { get; set; }
     }
 }
