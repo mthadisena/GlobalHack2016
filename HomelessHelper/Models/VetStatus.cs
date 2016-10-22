@@ -1,4 +1,5 @@
 ﻿using System;
+using HomelessHelper.Core.Domain.Enum;
 
 namespace HomelessHelper.Models
 {

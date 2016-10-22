@@ -1,4 +1,5 @@
-﻿using HomelessHelper.Core.Domain;
+﻿using System.Collections.Generic;
+using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.EntityFramework;
 using NUnit.Framework;
 
@@ -18,11 +19,33 @@ namespace HomelessHelper.Test
 
         [Test]
         public void Stage()
-        {
-            //example
+        { 
             var shelter = new Shelter
             {
-                Name = "Really cool shelter"
+                Name = "Really cool shelter",
+                Beds = new List<Bed>
+                {
+                   new Bed
+                   {
+                       Number = "1A",
+                       Description = "Clean",
+                       Note = "Very Clean"
+                   },
+
+                   new Bed
+                   {
+                       Number = "1B",
+                       Description = "Clean",
+                       Note = "Very Clean"
+                   },
+                   new Bed
+                   {
+                       Number = "1C",
+                       Description = "Clean",
+                       Note = "Very Clean"
+                   }
+                }
+                
             };
             _context.Shelters.Add(shelter);
             _context.SaveChanges();
