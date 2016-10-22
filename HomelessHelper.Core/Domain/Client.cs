@@ -18,5 +18,6 @@ namespace HomelessHelper.Core.Domain
         public DateOfBirthType DateOfBirthType { get; set; }
         public Race Race { get; set; }
         public Ethnicity Ethnicity { get; set; }
+        public VetStatus VetStatus { get; set; }
     }
 }

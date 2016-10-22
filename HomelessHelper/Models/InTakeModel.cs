@@ -12,5 +12,6 @@ namespace HomelessHelper.Models
         public Race Race { get; set; }
         public bool Gender { get; set; }
         public VetStatus VetStatus { get; set; }
+        public Ethnicity Ethnicity { get; set; }
     }
 }
