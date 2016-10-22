@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.Domain.Enum;
 using HomelessHelper.Core.EntityFramework;
@@ -16,12 +17,12 @@ namespace HomelessHelper.Core.Service
         {
             var shelterFinder = new ShelterFinder();
             var shelter = shelterFinder.Find(shelterType);
-            if (shelter != null)
+            if (shelter != null && shelter.Any())
             {
                 var bedFinder = new RoomBedFinder();
 
                 var availableBeds = bedFinder.Find(shelter[0].Id, DateTime.Today);
-                if (availableBeds != null)
+                if (availableBeds != null && availableBeds.Any())
                 {
                     dbContext.BedBookings.Add(new BedBooking
                     {
