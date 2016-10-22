@@ -27,9 +27,11 @@ namespace HomelessHelper.Core.Domain
         public DateOfBirthType DateOfBirthType { get; set; }
         public Race Race { get; set; }
         public Ethnicity Ethnicity { get; set; }
+        public VeteranStatus VeteranStatus { get; set; }
         public VetStatus VetStatus { get; set; }
         public List<WarService> WarServices { get; set; }
         public int BedNumber { get; set; }
         public ClientStatus ClientStatus { get; set; }
+        public DisablingConditions DisablingConditions { get; set; }
     }
 }
