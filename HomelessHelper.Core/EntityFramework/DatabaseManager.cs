@@ -2,7 +2,7 @@
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Migrations;
 
-namespace HomelessHelper.Core
+namespace HomelessHelper.Core.EntityFramework
 {
     public class DatabaseManager
     {

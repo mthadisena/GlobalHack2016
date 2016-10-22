@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity.Migrations;
 
-namespace HomelessHelper.Core
+namespace HomelessHelper.Core.EntityFramework
 {
     internal sealed class EFConfiguration : DbMigrationsConfiguration<HomelessHelperDbContext>
     {
