@@ -28,6 +28,8 @@ namespace HomelessHelper.Core.Domain
         public ClientStatus ClientStatus { get; set; }
         public DisablingConditions DisablingConditions { get; set; }
         public LivingSituation LivingSituation { get; set; }
+        public DestinationType Destination { get; set; }
+        public string DestinationText { get; set; }
 
         public Shelter Shelter { get; set; }
         public Bed Bed { get; set; }

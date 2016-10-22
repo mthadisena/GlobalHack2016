@@ -52,6 +52,7 @@
     <Compile Include="Domain\Enum\ClientStatus.cs" />
     <Compile Include="Domain\BedBooking.cs" />
     <Compile Include="Domain\Enum\DateOfBirthType.cs" />
+    <Compile Include="Domain\Enum\DestinationType.cs" />
     <Compile Include="Domain\Enum\DisablingConditions.cs" />
     <Compile Include="Domain\Enum\DischargeStatus.cs" />
     <Compile Include="Domain\Enum\Ethnicity.cs" />
