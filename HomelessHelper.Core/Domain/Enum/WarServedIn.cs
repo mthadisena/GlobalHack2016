@@ -1,10 +1,13 @@
-﻿public enum WarServedIn
+﻿namespace HomelessHelper.Core.Domain.Enum
 {
-    WorldWar2,
-    KoreanWar,
-    VietnamWar,
-    DesertStorm,
-    AfghanistanOEF,
-    IraqOIF,
-    OtherTheater
+    public enum WarServedIn
+    {
+        WorldWar2,
+        KoreanWar,
+        VietnamWar,
+        DesertStorm,
+        AfghanistanOEF,
+        IraqOIF,
+        OtherTheater
+    }
 }

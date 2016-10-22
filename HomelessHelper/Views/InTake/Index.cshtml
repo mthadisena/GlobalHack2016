@@ -37,9 +37,9 @@
         @Html.ValidationMessageFor(model => model.Gender)
     </div>
     <div class="col-md-10">
-        @Html.LabelFor(model => model.VetStatus)
-        @Html.EditorFor(model => model.VetStatus)
-        @Html.ValidationMessageFor(model => model.VetStatus)
+        @Html.LabelFor(model => model.VetStatus.IsVet)
+        @Html.EditorFor(model => model.VetStatus.IsVet)
+        @Html.ValidationMessageFor(model => model.VetStatus.IsVet)
     </div>
-
+@*        if IsVet, show rest of fields*@
 </div>
