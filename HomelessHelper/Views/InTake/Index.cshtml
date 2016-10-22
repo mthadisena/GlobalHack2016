@@ -1,4 +1,5 @@
-﻿@model HomelessHelper.Models.InTakeModel
+﻿@using System.Web.UI.WebControls
+@model HomelessHelper.Models.InTakeModel
 @{
     ViewBag.Title = "Intake";
 }
@@ -80,6 +81,11 @@
                 @Html.EnumDropDownListFor(model => model.VetStatus.DischargeStatus)<br />
                 @Html.ValidationMessageFor(model => model.VetStatus.DischargeStatus)
             </div>
+        </div>
+        <div class="form-group" style="">
+            @Html.LabelFor(model => model.SituationSummary)<br />
+            @Html.EditorFor(model => model.SituationSummary)<br />
+            @Html.ValidationMessageFor(model => model.SituationSummary)
         </div>
         <input type="submit" value="Submit" />
     </div>
