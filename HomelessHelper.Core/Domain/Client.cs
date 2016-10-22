@@ -17,5 +17,6 @@ namespace HomelessHelper.Core.Domain
         public NameQuality NameQuality { get; set; }
         public DateOfBirthType DateOfBirthType { get; set; }
         public Race Race { get; set; }
+        public Ethnicity Ethnicity { get; set; }
     }
 }
