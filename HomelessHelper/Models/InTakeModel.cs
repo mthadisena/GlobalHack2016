@@ -1,4 +1,6 @@
-﻿namespace HomelessHelper.Models
+﻿using System;
+
+namespace HomelessHelper.Models
 {
     public class InTakeModel
     {
@@ -9,6 +11,7 @@
         public Race Race { get; set; }
         public bool Gender { get; set; }
         public VetStatus VetStatus { get; set; }
+
 
     }
 }
@@ -25,6 +28,7 @@ public enum Race
 
 public class VetStatus
 {
+    public bool IsVet { get; set; }
     public DateTime YearEnteredService { get; set; }
     public DateTime YearLeftService { get; set; }
     
@@ -55,3 +59,4 @@ public enum DischargeStatus
     Honorable,
     Dishonorable
 }
+
