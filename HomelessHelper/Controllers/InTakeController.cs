@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Web.Mvc;
 using HomelessHelper.Core.Domain;
+using HomelessHelper.Core.Domain.Enum;
 using HomelessHelper.Core.EntityFramework;
+using HomelessHelper.Core.Service;
 using HomelessHelper.Models;
 using VetStatus = HomelessHelper.Core.Domain.VetStatus;
 using HomelessHelper.Utility;
@@ -44,7 +46,7 @@ namespace HomelessHelper.Controllers
                     clientToAdd.VetStatus = model.VetStatus;
                 }
             	dbContext.Clients.Add(clientToAdd);
-            	var shelterMatcherResponse = new ShelterMatcher().Match(client, ShelterType.Men, dbContext);
+            	var shelterMatcherResponse = new ShelterMatcher().Match(clientToAdd, ShelterType.Men, dbContext);
             	dbContext.SaveChanges();
 
             	return View(shelterMatcherResponse);
