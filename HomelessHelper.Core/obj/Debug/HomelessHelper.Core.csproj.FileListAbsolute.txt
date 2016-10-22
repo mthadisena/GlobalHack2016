@@ -1,0 +1,5 @@
+C:\GlobalHack2016\HomelessHelper.Core\bin\Debug\HomelessHelper.Core.dll
+C:\GlobalHack2016\HomelessHelper.Core\bin\Debug\HomelessHelper.Core.pdb
+C:\GlobalHack2016\HomelessHelper.Core\obj\Debug\HomelessHelper.Core.csprojResolveAssemblyReference.cache
+C:\GlobalHack2016\HomelessHelper.Core\obj\Debug\HomelessHelper.Core.dll
+C:\GlobalHack2016\HomelessHelper.Core\obj\Debug\HomelessHelper.Core.pdb
