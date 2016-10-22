@@ -11,6 +11,7 @@ namespace HomelessHelper.Core.EntityFramework
         public DbSet<ServicePerson> ServicePersons { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Bed> Beds { get; set; }
+        public DbSet<BedBooking> BedBookings { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<WarService> WarService { get; set; }
         public DbSet<VetStatus> VetStatus { get; set; }
