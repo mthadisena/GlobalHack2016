@@ -23,11 +23,3 @@ namespace HomelessHelper.Models
         public Ethnicity Ethnicity { get; set; }
     }
 }
-
-public enum Gender
-{
-    Male,
-    Female,
-    Other,
-    NotDisclosed
-}
