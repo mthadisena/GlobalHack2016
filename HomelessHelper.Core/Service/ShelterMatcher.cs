@@ -5,9 +5,14 @@ using HomelessHelper.Core.EntityFramework;
 
 namespace HomelessHelper.Core.Service
 {
+
+    public interface IShelterMatcher
+    {
+        ShelterMatcherResponse Match(Client client, ShelterType shelterType, HomelessHelperDbContext dbContext);
+    }
     public class ShelterMatcher : IShelterMatcher
     {
-        public string Match(Client client, ShelterType shelterType, HomelessHelperDbContext dbContext)
+        public ShelterMatcherResponse Match(Client client, ShelterType shelterType, HomelessHelperDbContext dbContext)
         {
             var shelterFinder = new ShelterFinder();
             var shelter = shelterFinder.Find(shelterType);
@@ -24,16 +29,31 @@ namespace HomelessHelper.Core.Service
                         ClientId = client.Id,
                         CheckInDate = DateTime.Today
                     });
-                    return $"{shelter[0].Name} - {availableBeds[0].Number}";
+                    return new ShelterMatcherResponse
+                    {
+                        IsBooked = true,
+                        Message = $"Shelter Name : {shelter[0].Name}. Bed Number: {availableBeds[0].Number}",
+                        Name = $"{client.FirstName} {client.LastName}"
+                    };
                 }
-                return "No shelter available";
+                return new ShelterMatcherResponse
+                {
+                    Message = "No shelter available",
+                    Name = $"{client.FirstName} {client.LastName}"
+                };
             }
-            return "No shelter available";
+            return new ShelterMatcherResponse
+            {
+                Message = "No shelter available",
+                Name = $"{client.FirstName} {client.LastName}"
+            };
         }
     }
+}
 
-    public interface IShelterMatcher
-    {
-        string Match(Client client, ShelterType shelterType, HomelessHelperDbContext dbContext);
-    }
+public class ShelterMatcherResponse
+{
+    public string Name { get; set; }
+    public bool IsBooked { get; set; }
+    public string Message { get; set; }
 }

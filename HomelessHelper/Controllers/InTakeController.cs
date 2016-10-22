@@ -48,11 +48,11 @@ namespace HomelessHelper.Controllers
             };
             dbContext.Clients.Add(client);
              
-            var availableBed = new ShelterMatcher().Match(client, ShelterType.Men, dbContext);
+            var shelterMatcherResponse = new ShelterMatcher().Match(client, ShelterType.Men, dbContext);
 
             dbContext.SaveChanges();
 
-            return RedirectToAction("Index", "Home");
+            return View(shelterMatcherResponse);
         }
         
         [HttpPost]
