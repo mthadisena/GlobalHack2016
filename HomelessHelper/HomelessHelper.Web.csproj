@@ -278,6 +278,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\InTake\Index.cshtml" />
     <Content Include="Views\InTake\PostInTakeForm.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Staff\Index.cshtml" />
     <Content Include="Views\Shelter\Index.cshtml" />
     <Content Include="Views\Shelter\ShelterSearchResults.cshtml" />
   </ItemGroup>
@@ -312,7 +314,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>57274</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

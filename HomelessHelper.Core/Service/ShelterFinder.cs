@@ -17,7 +17,7 @@ namespace HomelessHelper.Core.Service
        public List<Shelter> Find( ShelterType shelterType)
        {
             var dbContext = new HomelessHelperDbContext();
-            return dbContext.Shelters.Where(x => x.Type == shelterType).Include(x => x.Bookings).ToList();
+            return dbContext.Shelters.Where(x => x.Type == shelterType).Include(x => x.Bookings).Include(x => x.Address).ToList();
        }
    }
 }

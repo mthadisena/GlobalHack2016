@@ -2,6 +2,7 @@
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.Domain.Enum;
 using HomelessHelper.Core.EntityFramework;
+using HomelessHelper.Core.Staging;
 using NUnit.Framework;
 
 namespace HomelessHelper.Test
@@ -16,11 +17,14 @@ namespace HomelessHelper.Test
         {
             var manager = new DatabaseManager(_context);
             manager.DropAndCreate();
+            Stage();
         }
+       
+        private void Stage()
+        {
+            var importer = new DataImporter(_context);
+            importer.Import();
 
-        [Test]
-        public void Stage()
-        { 
             var shelter1 = new Shelter
             {
                 Name = "Shelter for men",

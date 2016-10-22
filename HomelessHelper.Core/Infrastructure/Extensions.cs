@@ -17,5 +17,15 @@ namespace HomelessHelper.Core.Infrastructure
             }
             return rows;
         }
+
+        public static string MaskSSN(this string ssn)
+        {
+            if (string.IsNullOrEmpty(ssn) || ssn.Length != 9)
+            {
+                return ssn;
+            }
+            var last4SSN = ssn.Substring(5, 4);
+            return $"***-**-{last4SSN}";
+        }
     }
 }

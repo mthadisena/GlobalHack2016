@@ -3,16 +3,21 @@
 @{
     ViewBag.Title = "Confirmation";
 }
-<br/>
+<br />
 @if (Model.IsBooked)
 {
     <div class="alert alert-success" role="alert">
-            Congratulations! <b>@Model.Name</b> is now assigned to @Model.Message
-        </div>
-
+        <div> Congratulations! <b>@Model.Name</b> is now assigned to</div>
+       @if (@Model.Address != null)
+       { 
+        <div> @Model.Message</div>
+        <div> @string.Format("{0} {1} {2}", Model.Address.AddressLine1, Model.Address.AddressLine2, Model.Address.AddressLine3)</div>
+        <div> @string.Format("{0}, {1} {2}", Model.Address.City, Model.Address.State, Model.Address.Zip)</div>
+       }
+    </div>
 }
 else
-{ 
+{
     <div class="alert alert-danger" role="alert">
         Sorry <b>@Model.Name</b>,  @Model.Message  We will contact you soon.
     </div>
