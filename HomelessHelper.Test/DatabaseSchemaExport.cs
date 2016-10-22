@@ -19,16 +19,13 @@ namespace HomelessHelper.Test
             manager.DropAndCreate();
             Stage();
         }
-        
+
         private void Stage()
         {
             var sampleImporter = new DataImporter(_context);
             sampleImporter.Import();
 
-        [Test]
-        public void Stage()
-        { 
-            var shelter1 = new Shelter
+            var shelter = new Shelter
             {
                 Name = "Really cool shelter"
             };
