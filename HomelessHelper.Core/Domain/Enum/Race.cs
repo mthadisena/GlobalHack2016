@@ -15,6 +15,8 @@ namespace HomelessHelper.Core.Domain.Enum
         White,
         [Display(Name = "Choose not to disclose")]
         ClientRefused,
-        Other
+        Other,
+        BlackOrAfricanAmerican,
+        ClientDoesNotKnow
     }
 }

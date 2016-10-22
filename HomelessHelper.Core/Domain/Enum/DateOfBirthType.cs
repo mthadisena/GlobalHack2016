@@ -8,6 +8,6 @@ namespace HomelessHelper.Core.Domain.Enum
         ApproximateOrPartialDOBReported,
         [Description("Client Doesn't Know")]
         ClientDoesNotKnow,
-        ClientRefuxed,
+        ClientRefused,
     }
 }

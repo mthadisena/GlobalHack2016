@@ -13,6 +13,7 @@ namespace HomelessHelper.Core.Domain.Enum
         TransgenderFemaleToMale,
         [Display(Name = "Choose not to disclose")]
         ClientRefused,
-        Other
+        Other,
+        ClientDoesNotKnow
     }
 }
