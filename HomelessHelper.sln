@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomelessHelper", "HomelessHelper\HomelessHelper.csproj", "{8E8AD4FD-8368-406C-BC42-BE8673F8E905}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomelessHelper.Core", "HomelessHelper.Core\HomelessHelper.Core.csproj", "{EDE2479B-DD4F-4A76-9954-3BFA80FA2610}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8E8AD4FD-8368-406C-BC42-BE8673F8E905}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E8AD4FD-8368-406C-BC42-BE8673F8E905}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E8AD4FD-8368-406C-BC42-BE8673F8E905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDE2479B-DD4F-4A76-9954-3BFA80FA2610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDE2479B-DD4F-4A76-9954-3BFA80FA2610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDE2479B-DD4F-4A76-9954-3BFA80FA2610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDE2479B-DD4F-4A76-9954-3BFA80FA2610}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
