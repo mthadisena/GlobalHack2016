@@ -1,6 +1,8 @@
-﻿namespace HomelessHelper.Core.Domain
+﻿using HomelessHelper.Core.EntityFramework;
+
+namespace HomelessHelper.Core.Domain
 {
-    public abstract class BasePerson
+    public abstract class BasePerson : Entity
     {
         public string FirstName { get; set; }
         public string MiddleInitial { get; set; }

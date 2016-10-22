@@ -1,5 +1,8 @@
-﻿namespace HomelessHelper.Core.Domain
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace HomelessHelper.Core.Domain
 {
+    [Table("Client")]
     public class Client:Person
     {
         public string Condition { get; set; }
