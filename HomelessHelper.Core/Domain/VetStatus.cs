@@ -10,10 +10,10 @@ namespace HomelessHelper.Core.Domain
     [Table("VetStatus")]
     public class VetStatus : Entity
     {
-        public DateTime YearEnteredService { get; set; }
-        public DateTime YearLeftService { get; set; }
-        public MilitaryBranch MilitaryBranch { get; set; }
-        public DischargeStatus DischargeStatus { get; set; }
+        public DateTime? YearEnteredService { get; set; }
+        public DateTime? YearLeftService { get; set; }
+        public MilitaryBranch? MilitaryBranch { get; set; }
+        public DischargeStatus? DischargeStatus { get; set; }
     }
 
     [Table("WarService")]
