@@ -1,0 +1,36 @@
+﻿@using HomelessHelper.Core.Infrastructure
+@model HomelessHelper.Models.SearchModel
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+<br/>
+    
+<form class="navbar-form navbar-left" role="search" action="@Url.Action("Search","Search")">
+    <div class="form-group">
+        <input id="SearchTerm" name="SearchTerm" type="text" class="form-control" placeholder="search by name, DOB, or SSN">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<br /><br /><br />
+<div>
+    @foreach (var client in Model.Clients.OrderByDescending(x => x.LastName))
+    {
+        <div class="well">
+            <span class="col-xs-3">@($"{client.FirstName} {client.MiddleName} {client.LastName}")</span>
+            <span class="col-xs-2">@($"UUID: {client.UUID}")</span>
+            <span class="col-xs-2">@($"SSN: {client.SSN.MaskSSN()}")</span>
+            <span class="col-xs-2">@($"Bed #: {client.BedNumber}")</span>
+        </div>
+    }
+</div>
+</body>
+</html>
