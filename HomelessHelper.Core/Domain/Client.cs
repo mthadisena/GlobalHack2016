@@ -11,6 +11,7 @@ namespace HomelessHelper.Core.Domain
         public Guid ClientId { get; set; }
         public long UserId { get; set; }
 
+        public long HouseHoldId { get; set; }
         public string SSN { get; set; }
         public SSNDataQuality SsnDataQuality { get; set; }
         public DateTime DateOfBirth { get; set; }
@@ -36,5 +37,6 @@ namespace HomelessHelper.Core.Domain
         public LivingSituation LivingSituation { get; set; }
         public DestinationType Destination { get; set; }
         public string DestinationText { get; set; }
+        public RelationshipToHeadOfHousehold HeadOfHousehold { get; set; }
     }
 }
