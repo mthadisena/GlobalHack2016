@@ -1,28 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.Domain.Enum;
+using HomelessHelper.Core.EntityFramework;
 
 namespace HomelessHelper.Core.Service
 {
-   public class ShelterMatcher: IShelterMatcher
+    public class ShelterMatcher : IShelterMatcher
     {
-       public string Match(Client client, ShelterType shelterType)
-       {
-          var shelterFinder = new ShelterFinder();
-         var shelter =  shelterFinder.Find(shelterType);
-            var bedFinder = new RoomBedFinder();
+        public string Match(Client client, ShelterType shelterType, HomelessHelperDbContext dbContext)
+        {
+            var shelterFinder = new ShelterFinder();
+            var shelter = shelterFinder.Find(shelterType);
+            if (shelter != null)
+            {
+                var bedFinder = new RoomBedFinder();
 
-          var availableBeds = bedFinder.Find(shelter[0].Id, DateTime.Today);
-        return string.Format("{0} - {1}", shelter[0].Name, availableBeds[0].Number); 
-       }
+                var availableBeds = bedFinder.Find(shelter[0].Id, DateTime.Today);
+                if (availableBeds != null)
+                {
+                    dbContext.BedBookings.Add(new BedBooking
+                    {
+                        BedNumber = availableBeds[0].Number,
+                        ClientId = client.Id,
+                        CheckInDate = DateTime.Today
+                    });
+                    return $"{shelter[0].Name} - {availableBeds[0].Number}";
+                }
+                return "No shelter available";
+            }
+            return "No shelter available";
+        }
     }
 
     public interface IShelterMatcher
     {
-        string Match(Client client, ShelterType shelterType);
+        string Match(Client client, ShelterType shelterType, HomelessHelperDbContext dbContext);
     }
 }

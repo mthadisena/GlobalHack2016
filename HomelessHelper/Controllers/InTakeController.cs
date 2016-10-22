@@ -40,11 +40,15 @@ namespace HomelessHelper.Controllers
                     YearLeftService = model.VetStatus.YearLeftService,
                     MilitaryBranch = model.VetStatus.MilitaryBranch,
                     DischargeStatus = model.VetStatus.DischargeStatus
+                },
+                LivingSituation = new LivingSituation
+                {
+                    DateStarted = DateTime.Today
                 }
             };
             dbContext.Clients.Add(client);
              
-            var availableBed = new ShelterMatcher().Match(client, ShelterType.Men);
+            var availableBed = new ShelterMatcher().Match(client, ShelterType.Men, dbContext);
 
             dbContext.SaveChanges();
 
