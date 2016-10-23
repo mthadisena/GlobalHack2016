@@ -14,14 +14,17 @@ namespace HomelessHelper.Controllers
 
             var model = new ShelterSearchResltsModel();
 
-            return View("~/Views/Shelter/Index.cshtml");
+            return View("Index");
         }
 
         public PartialViewResult Search(string searchValue)
         {
-            var model = new ShelterSearchResltsModel() {ShelterName = "Family Shelter", NumberOfBeds = 14};
+            var model = new List<ShelterSearchResltsModel>()
+            {
+                new ShelterSearchResltsModel() {ShelterName = "Family Shelter", NumberOfBeds = 14}
+            };
 
-            return PartialView("~/Views/Shelter/ShelterSearchResults.cshtml");
+            return PartialView("ShelterSearchResults", model);
         }
     }
 }
