@@ -13,20 +13,23 @@ namespace HomelessHelper.Controllers
     {
         public ActionResult Index()
         {
+            var model = new ShelterSearchModel();
 
-            var model = new ShelterSearchResltsModel();
-
-            return View("Index");
+            return View("Index", model);
         }
 
-        public PartialViewResult Search(string searchValue)
+        public ActionResult Search(string SearchTerm)
         {
-            var model = new List<ShelterSearchResltsModel>()
+            var model = new ShelterSearchModel
             {
-                new ShelterSearchResltsModel() {ShelterName = "Family Shelter", NumberOfBeds = 14}
+                SearchTerm = SearchTerm,
+                Results = new List<ShelterSearchResltsModel>
+                {
+                    new ShelterSearchResltsModel {ShelterName = "Blah", NumberOfBeds = 20}
+                }
             };
 
-            return PartialView("ShelterSearchResults", model);
+            return View("Index", model);
         }
 
 
