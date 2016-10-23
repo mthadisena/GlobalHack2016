@@ -29,6 +29,7 @@ namespace HomelessHelper.Test
             {
                 Name = "Shelter for men",
                 Type = ShelterType.Men,
+                ServicesOffered = new List<ServicesOffered>() {ServicesOffered.PermanentHousing, ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining},
                 Address = new Address() { AddressLine1 = "1001 st", City = "St Louis", State = "MO", Zip = "63103"}
             };
 
@@ -65,6 +66,7 @@ namespace HomelessHelper.Test
             {
                 Name = "Family shelter",
                 Type = ShelterType.Family,
+                ServicesOffered = new List<ServicesOffered>() { ServicesOffered.PermanentHousing, ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining },
                 Address = new Address() { AddressLine1 = "2001 st", City = "St Louis", State = "MO", Zip = "63104" }
             };
 
@@ -100,6 +102,7 @@ namespace HomelessHelper.Test
             {
                 Name = "LGBT shelter",
                 Type = ShelterType.LGBT,
+                ServicesOffered = new List<ServicesOffered>() { ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining },
                 Address = new Address() { AddressLine1 = "3001 st", City = "St Louis", State = "MO", Zip = "63105" }
             };
             var shelter3Beds = new List<Bed>
@@ -134,6 +137,7 @@ namespace HomelessHelper.Test
             {
                 Name = "Shelter for Women",
                 Type = ShelterType.Women,
+                ServicesOffered = new List<ServicesOffered>() {ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment, ServicesOffered.MedicalServic},
                 Address = new Address() { AddressLine1 = "4001 st", City = "St Louis", State = "MO", Zip = "63106" }
             };
             var shelter4Beds = new List<Bed>
@@ -168,6 +172,7 @@ namespace HomelessHelper.Test
             {
                 Name = "Shelter for Women with children",
                 Type = ShelterType.WomenWithChildren,
+                ServicesOffered = new List<ServicesOffered>() {ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment },
                 Address = new Address() { AddressLine1 = "5001 st", City = "St Louis", State = "MO", Zip = "63107" }
             };
             var shelter5Beds = new List<Bed>
@@ -202,6 +207,7 @@ namespace HomelessHelper.Test
             {
                 Name = "Shelter for youth",
                 Type = ShelterType.Youth,
+                ServicesOffered = new List<ServicesOffered>() {ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment },
                 Address = new Address() { AddressLine1 = "6001 st", City = "St Louis", State = "MO", Zip = "63108" }
             };
             var shelter6Beds = new List<Bed>
