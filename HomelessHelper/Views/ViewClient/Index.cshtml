@@ -78,9 +78,9 @@
                         @Html.DisplayFor(model => model.Veteran)<br /><br />
                     </div>
                     @if (Model.VeteranStatus == VeteranStatus.Yes)
-            {
-                foreach (var war in Model.WarServices)
-                {
+                    {
+                        foreach (var war in Model.WarServices)
+                        {
                             <div>
                                 @war.WarServedIn
                                 @war.YearStarted
