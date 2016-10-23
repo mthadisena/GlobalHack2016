@@ -34,7 +34,7 @@ namespace HomelessHelper.Core.Domain
         public Ethnicity Ethnicity { get; set; }
         public VeteranStatus VeteranStatus { get; set; }
         public VetStatus VetStatus { get; set; }
-        public List<WarService> WarServices { get; set; }
+        public List<WarService> WarServices { get; set; } = new List<WarService>();
         public int BedNumber { get; set; }
         public ClientStatus ClientStatus { get; set; }
         public DisablingConditions DisablingConditions { get; set; }
