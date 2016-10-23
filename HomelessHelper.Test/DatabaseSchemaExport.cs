@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.Domain.Enum;
 using HomelessHelper.Core.EntityFramework;
@@ -358,6 +360,49 @@ namespace HomelessHelper.Test
                 _context.Shelters.Add(veteransShelter);
 
             }
+            _context.SaveChanges();
+
+            var clients = _context.Clients.Where(x => !string.IsNullOrEmpty(x.FirstName)).ToList();
+            var shetler = _context.Shelters.FirstOrDefault();           
+
+            foreach (var client in clients)
+            {
+                var booking = new BedBooking
+                {
+                    Bed = new Bed
+                    {
+                        BedStatus = BedStatus.Occupied,
+                        Description = "very beautiful bed, luxurious",
+                        Note = "gross",
+                        Number = "123",
+                        Shelter = shetler
+                    },
+                    CheckInDate = new DateTime(2016, 4, 15),
+                    CheckOutDate = new DateTime(2016, 5, 15),
+                    ClientId = client.Id,
+                    Shelter = shetler
+                };
+
+                var booking2 = new BedBooking
+                {
+                    Bed = new Bed
+                    {
+                        BedStatus = BedStatus.Occupied,
+                        Description = "its a bed",
+                        Note = "soft",
+                        Number = "567",
+                        Shelter = shetler
+                    },
+                    CheckInDate = new DateTime(2016, 10, 1),
+                    CheckOutDate = null,
+                    ClientId = client.Id,
+                    Shelter = shetler
+                };
+
+                _context.BedBookings.Add(booking);
+                _context.BedBookings.Add(booking2);
+            }
+
             _context.SaveChanges();
         }
     }
