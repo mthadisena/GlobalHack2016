@@ -89,6 +89,7 @@ namespace HomelessHelper.Controllers
             //var firstAvailableBed = shelter.Beds.Find(x => x.BedStatus == BedStatus.Vacant);
             if (!availablebeds.Any()) return null;
             
+            availablebeds[0].BedStatus = BedStatus.Occupied;
             return new BedBooking()
             {
                 ClientId = client.Id,

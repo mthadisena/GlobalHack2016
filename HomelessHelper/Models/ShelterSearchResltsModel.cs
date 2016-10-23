@@ -15,7 +15,7 @@ namespace HomelessHelper.Models
         public List<Client> Clients { get; set; } = new List<Client>();
         public List<Bed> Beds { get; set; } = new List<Bed>();
         public Address ShelterAddress { get; set; }
-        public int BedsAvailable => Beds.Count - Clients.Count;
+        public int BedsAvailable => Beds.Count(b => b.BedStatus==BedStatus.Vacant);
         public List<ServicesOffered> ServicesOffered { get; set; } = new List<ServicesOffered>();
         public string ServicesOfferedList => !ServicesOffered.Any()? "": string.Join(", ", ServicesOffered.Select(x=>x.ServiceType));
     }

@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CheckOutController.cs" />
     <Compile Include="Controllers\EditInTakeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InTakeController.cs" />
@@ -203,6 +204,7 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ShelterController.cs" />
     <Compile Include="Controllers\ShelterSearchController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\ViewClientController.cs" />
     <Compile Include="Controllers\ViewShelterController.cs" />
     <Compile Include="Global.asax.cs">
@@ -217,6 +219,7 @@
     <Compile Include="Models\ShelterDetailsModel.cs" />
     <Compile Include="Models\ShelterSearchModel.cs" />
     <Compile Include="Models\ShelterSearchResltsModel.cs" />
+    <Compile Include="Models\StaffModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utility\JsonPartialResult.cs" />
