@@ -29,6 +29,7 @@
             <span class="col-xs-2">@($"UUID: {client.UUID}")</span>
             <span class="col-xs-2">@($"SSN: {client.SSN.MaskSSN()}")</span>
             <span class="col-xs-2">@($"Bed #: {client.BedNumber}")</span>
+            <span class="col-xs-2">@string.Format($"DOB : {client.DateOfBirth?.ToString("MM/dd/yyyy")}")</span>
         </div>
     }
 </div>
