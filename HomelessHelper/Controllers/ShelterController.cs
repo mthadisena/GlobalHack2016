@@ -11,7 +11,7 @@ namespace HomelessHelper.Controllers
         {
             var dbContext = new HomelessHelperDbContext();
 
-            var model = dbContext.Shelters.Where(x => x.Id == id).FirstOrDefault();
+            var model = dbContext.Shelters.FirstOrDefault(x => x.Id == id);
 
             return PartialView("Index",model);
         }
