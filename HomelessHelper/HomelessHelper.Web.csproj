@@ -202,7 +202,7 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ShelterController.cs" />
     <Compile Include="Controllers\ShelterSearchController.cs" />
-    <Compile Include="Controllers\ViewClient.cs" />
+    <Compile Include="Controllers\ViewClientController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

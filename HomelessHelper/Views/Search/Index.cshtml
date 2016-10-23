@@ -34,7 +34,7 @@
         @foreach (var client in Model.Clients.OrderByDescending(x => x.LastName))
         {
             <tr>
-                <td data-toggle="modal" data-target="#myModal" style="cursor: pointer" data-id="@client.Id"> @($"{client.FirstName} {client.MiddleName} {client.LastName}")</td>
+                <td class="btn-link" data-toggle="modal" data-target="#myModal" style="cursor: pointer" data-id="@client.Id"> @($"{client.FirstName} {client.MiddleName} {client.LastName}")</td>
                 <td>@client.UUID</td>
                 <td>@client.SSN.MaskSSN()</td>
                 <td>@client.BedNumber</td>
