@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HomelessHelper.Core.Domain;
+using HomelessHelper.Core.EntityFramework;
 using HomelessHelper.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace HomelessHelper.Controllers
 {
@@ -11,20 +14,41 @@ namespace HomelessHelper.Controllers
     {
         public ActionResult Index()
         {
+            var results = GetShelters(null);
+            var model = new ShelterSearchModel() {Results = results};
 
-            var model = new ShelterSearchResltsModel();
-
-            return View("Index");
+            return View("Index", model);
         }
 
-        public PartialViewResult Search(string searchValue)
+        public ActionResult Search(string searchTerm)
         {
-            var model = new List<ShelterSearchResltsModel>()
+            var results = GetShelters(searchTerm);
+
+            var model = new ShelterSearchModel
             {
-                new ShelterSearchResltsModel() {ShelterName = "Family Shelter", NumberOfBeds = 14}
+                SearchTerm = searchTerm,
+                Results = results
             };
 
-            return PartialView("ShelterSearchResults", model);
+            return View("Index", model);
+        }
+
+
+        private IEnumerable<Shelter> GetShelters(string searchInput)
+        {
+            var dbContext = new HomelessHelperDbContext();
+
+            if (string.IsNullOrEmpty(searchInput))
+            {
+               return dbContext.Shelters.ToList();
+            }
+
+            var results = dbContext.Shelters.Where(x =>
+                                                    x.Name == searchInput ||
+                                                    x.Type.ToString().Equals(searchInput, StringComparison.InvariantCultureIgnoreCase) ||
+                                                    x.Address.City == searchInput || x.Address.Zip == searchInput).ToList();
+            
+            return results;
         }
     }
 }
