@@ -1,4 +1,5 @@
-﻿@model HomelessHelper.Core.Domain.Client
+﻿@using HomelessHelper.Core.Domain.Enum
+@model HomelessHelper.Core.Domain.Client
 
 @{
     ViewBag.Title = $"{Model.FirstName} {Model.LastName}";
@@ -11,58 +12,84 @@
     <meta name="viewport" content="width=device-width" />
 </head>
 <body>
-    <div class="row">
-        <div class="panel-default col-sm-3 breadcrumb">
-            <div class="panel-heading">Demographics</div>
-            <div class="panel-body">
-                <div>
-                    @Html.LabelFor(model => model.FirstName)<br />
-                    @Html.DisplayFor(model => model.LastName)<br /><br />
+    <div class="container">
+        <div class="row">
+            <div class="panel-default col-sm-3 breadcrumb">
+                <div class="panel-heading">Demographics</div>
+                <div class="panel-body">
+                    <div>
+                        @Html.LabelFor(model => model.FirstName)<br />
+                        @Html.DisplayFor(model => model.LastName)<br /><br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(model => model.MiddleName)<br />
+                        @Html.DisplayFor(model => model.MiddleName)<br /><br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(model => model.LastName)<br />
+                        @Html.DisplayFor(model => model.LastName)<br /><br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(model => model.DateOfBirthFormatted)<br />
+                        @Html.DisplayFor(model => model.DateOfBirthFormatted)<br /><br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(model => model.Email)<br />
+                        @Html.DisplayFor(model => model.Email)<br /><br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(model => model.Ethnicity)<br />
+                        @Html.DisplayFor(model => model.Ethnicity)<br /><br />
+                    </div>
                 </div>
-                <div>
-                    @Html.LabelFor(model => model.MiddleName)<br />
-                    @Html.DisplayFor(model => model.MiddleName)<br /><br />
-                </div>
-                <div>
-                    @Html.LabelFor(model => model.LastName)<br />
-                    @Html.DisplayFor(model => model.LastName)<br /><br />
-                </div>
-                <div>
-                    @Html.LabelFor(model => model.DateOfBirth)<br />
-                    @Html.DisplayFor(model => model.DateOfBirth)<br /><br />
-                </div>
-                <div>
-                    @Html.LabelFor(model => model.Email)<br />
-                    @Html.DisplayFor(model => model.Email)<br /><br />
-                </div>
-                <div>
-                    @Html.LabelFor(model => model.Ethnicity)<br />
-                    @Html.DisplayFor(model => model.Ethnicity)<br /><br />
-                </div>
-            </div>           
-        </div>
-        <div class="panel-default col-sm-3 breadcrumb">
-            <div>
-                @Html.LabelFor(model => model.BedNumber)<br />
-                @Html.DisplayFor(model => model.BedNumber)<br /><br />
-            </div>         
-            <div>
-                @Html.LabelFor(model => model.ClientStatus)<br />
-                @Html.DisplayFor(model => model.ClientStatus)<br /><br />
             </div>
-        </div>      
-        <div class="panel-default col-sm-3 breadcrumb">
-            <div class="panel-heading">Veteran Infos</div>
-            <div class="panel-body">
+            <div class="panel-default col-sm-3 breadcrumb">
+                <div class="panel-heading">Shelter Info</div><br/>
                 <div>
-                    @Html.LabelFor(model => model.VeteranStatus)<br />
-                    @Html.DisplayFor(model => model.VeteranStatus)<br /><br />
+                    @Html.LabelFor(model => model.BedNumber)<br />
+                    @Html.DisplayFor(model => model.BedNumber)<br /><br />
                 </div>
                 <div>
-                    @Html.LabelFor(model => model.Veteran)<br />
-                    @Html.DisplayFor(model => model.VeteranStatus)<br /><br />
+                    @Html.LabelFor(model => model.ClientStatus)<br />
+                    @Html.DisplayFor(model => model.ClientStatus)<br /><br />
                 </div>
-            </div>            
+                <div>
+                    @Html.LabelFor(model => model.Shelter.Address)<br />
+                    @Html.DisplayFor(model => model.Shelter.Address)<br /><br />
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.Shelter.Name)<br />
+                    @Html.DisplayFor(model => model.Shelter.Name)<br /><br />
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.Shelter.Type)<br />
+                    @Html.DisplayFor(model => model.Shelter.Type)<br /><br />
+                </div>
+            </div>
+            <div class="panel-default col-sm-3 breadcrumb">
+                <div class="panel-heading">Veteran Infos</div>
+                <div class="panel-body">
+                    <div>
+                        @Html.LabelFor(model => model.VeteranStatus)<br />
+                        @Html.DisplayFor(model => model.VeteranStatus)<br /><br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(model => model.Veteran)<br />
+                        @Html.DisplayFor(model => model.Veteran)<br /><br />
+                    </div>
+                    @if (Model.VeteranStatus == VeteranStatus.Yes)
+                    {
+                        foreach (var war in Model.WarServices)
+                        {
+                            <div>
+                                @war.WarServedIn
+                                @war.YearStarted
+                                @war.YearEnded
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
         </div>
     </div>
 </body>

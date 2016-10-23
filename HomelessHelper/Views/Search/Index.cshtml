@@ -21,7 +21,7 @@
     <button type="submit" class="btn btn-success">Submit</button>
 </form>
 <br /><br /><br />
-    
+
 <div class="container">
     <table class="table table-striped" style="width: 100%">
         <tr>
@@ -34,7 +34,7 @@
         @foreach (var client in Model.Clients.OrderByDescending(x => x.LastName))
         {
             <tr>
-                <td><a href=@Url.Action("Index", "ViewClient", new {id = client.Id})> @($"{client.FirstName} {client.MiddleName} {client.LastName}")</a></td>               
+                <td data-toggle="modal" data-target="#myModal" style="cursor: pointer" data-id="@client.Id"> @($"{client.FirstName} {client.MiddleName} {client.LastName}")</td>
                 <td>@client.UUID</td>
                 <td>@client.SSN.MaskSSN()</td>
                 <td>@client.BedNumber</td>
@@ -43,10 +43,43 @@
         }
     </table>
 </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Client</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                            <span class="sr-only">40% Complete (success)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 
 @Scripts.Render("~/bundles/jquery")
 <script>    
-    $(document).ready(function () { $('#SearchTerm').focus(); });
+    $(document).ready(function() {
+        $('#SearchTerm').focus(); 
+        var clientUrl = '@Html.Raw(@Url.Action("Index", "ViewClient"))';
+        $(document).ready(function () {
+            $('#SearchTerm').focus();
+            $('.modal').on('shown.bs.modal',
+                    function (event) {
+                        var button = $(event.relatedTarget);
+                        var clientId = button.data('id');
+                        var url = clientUrl + "?id=" + clientId;
+                        $(".modal-content").load(url);
+                    });
+        });
+    });
 </script>
