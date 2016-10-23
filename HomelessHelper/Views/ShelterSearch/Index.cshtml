@@ -1,50 +1,26 @@
-﻿@model HomelessHelper.Models.ShelterSearchResltsModel
-
+﻿@model HomelessHelper.Models.ShelterSearchModel
 @{ ViewBag.Title = "Shelter Search";}
-
-<h2>Shelter Search</h2>
-<div>
-    <form name="shelterSearchForm" id="shelterSearchForm">
-        <div>
-            <label>Search:</label><input type="text" name="searchInput" id="searchInput" alt="Enter Shelter name/city/zipcode"/><input type="button" id="searchShelter" value="Search"/>
-        </div>
-        <div>&nbsp;&nbsp;</div>
-        <div>
-            <label>Results</label>
-        </div>
-        <table id="searchResults">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th align="right">Available Beds</th>
-                </tr>
-            </thead>
-            <tbody id="tableData"></tbody>
-        </table>
-    </form>
-</div>
-@section scripts
-{
-    <script>
-        $(document)
-            .ready(function() {
-
-                $('#searchShelter')
-                    .click(function(e) {
-                        e.preventDefault();
-
-                        if ($('#searchShelter').val() === '' || $('#searchShelter').val().length === '') {
-                            alert("Please enter search value");
-                        } else {
-                            $.ajax({
-                                url: "@Url.Action("Search")",
-                                dataType: 'html',
-                                success: function(data) {
-                                    $('#tableData').html(data);
-                                }
-                            });
-                        }
-                    });
-            });
-    </script>
-}
+<br/>
+<form class="navbar-form navbar-left" style="width: 100%" role="search" action="@Url.Action("Search","ShelterSearch")">
+    <div class="form-group">
+        <input id="SearchTerm" name="SearchTerm" type="text" class="form-control" placeholder="Enter Shelter name/city/zipcode">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 70%">Name</th>
+            <th>Number of Beds</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var shelter in Model.Results)
+        {
+            <tr>
+                <td>@shelter.ShelterName</td>
+                <td>@shelter.NumberOfBeds</td>
+            </tr>
+        }
+    </tbody>
+</table> 

@@ -209,6 +209,7 @@
     <Compile Include="Models\InTakeModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\SearchModel.cs" />
+    <Compile Include="Models\ShelterSearchModel.cs" />
     <Compile Include="Models\ShelterSearchResltsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
