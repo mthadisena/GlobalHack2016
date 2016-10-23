@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.EntityFramework;
+using HomelessHelper.Core.Infrastructure;
 
 namespace HomelessHelper.Controllers
 {
@@ -31,7 +33,12 @@ namespace HomelessHelper.Controllers
         private readonly HomelessHelperDbContext _context = new HomelessHelperDbContext();
         public Shelter Query(Guid id)
         {
-            return _context.Shelters.FirstOrDefault(x => x.Id == id);
+            var clientIds = _context.BedBookings.Where(x => x.Shelter.Id == id).Select(y => y.ClientId).ToList();
+            var clients = _context.Clients.Where(x => clientIds.Contains(x.Id)).ToList();
+            var shelter = _context.Shelters.FirstOrDefault(x => x.Id == id);
+            if (shelter == null) return null;
+            shelter.Clients = clients;
+            return shelter;
         }
     }
 }

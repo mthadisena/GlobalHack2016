@@ -356,6 +356,8 @@ namespace HomelessHelper.Test
                     BedStatus = BedStatus.Vacant
                 }
             };
+
+                veteransShelter.Clients = _context.Clients.Where(x => x.FirstName.ToUpper().Contains("ROBERT")).ToList();
                 veteransShelter.Beds = beds;
                 _context.Shelters.Add(veteransShelter);
 

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using OfficeOpenXml;
 
 
@@ -26,6 +27,11 @@ namespace HomelessHelper.Core.Infrastructure
             }
             var last4SSN = ssn.Substring(5, 4);
             return $"***-**-{last4SSN}";
+        }
+
+        public static bool IsIn<T>(this T itemToCheck, IEnumerable<T> list)
+        {
+            return list.Contains(itemToCheck);
         }
     }
 }
