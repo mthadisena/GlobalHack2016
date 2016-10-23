@@ -15,18 +15,15 @@
 <br/>
     
 <form class="navbar-form navbar-left" role="search" action="@Url.Action("Search", "Search")">
-    <div class="container" style="width: 100%">
-        <div class="form-group" style="width: 75%">
-            <input id="SearchTerm" name="SearchTerm" type="text" class="form-control" placeholder="search by name, DOB, or SSN">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+    <div class="form-group">
+        <input style="width: 500px" id="SearchTerm" name="SearchTerm" type="text" class="form-control" placeholder="Search by Name, DOB, or SSN">
     </div>
+    <button type="submit" class="btn btn-success">Submit</button>
 </form>
 <br /><br /><br />
     
 <div class="container">
-    <h2>Clients</h2>
-    <table class="table-striped" style="width: 100%">
+    <table class="table table-striped" style="width: 100%">
         <tr>
             <th>Name</th>
             <th>UUID</th>
@@ -48,3 +45,8 @@
 </div>
 </body>
 </html>
+
+@Scripts.Render("~/bundles/jquery")
+<script>    
+    $(document).ready(function () { $('#SearchTerm').focus(); });
+</script>
