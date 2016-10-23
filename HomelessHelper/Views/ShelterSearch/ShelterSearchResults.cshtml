@@ -1,0 +1,11 @@
+﻿@model IEnumerable<HomelessHelper.Models.ShelterSearchResltsModel>
+
+<div>
+    @foreach (var shelter in Model)
+    {
+        <div class="well">
+            <span class="col-xs-3">@($"{shelter.ShelterName}")</span>
+            <span class="col-xs-2">@($"Bed #: {shelter.NumberOfBeds}")</span>
+        </div>
+    }
+</div>
