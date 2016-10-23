@@ -19,28 +19,30 @@ namespace HomelessHelper.Test
             manager.DropAndCreate();
             Stage();
         }
-       
+
         private void Stage()
         {
             var importer = new DataImporter(_context);
             importer.Import();
-
-            var shelter1 = new Shelter
+            for (int i = 0; i < 100; i++)
             {
-                Name = "Shelter for men",
-                Type = ShelterType.Men,
-                ServicesOffered = new List<ServicesOffered>() {ServicesOffered.PermanentHousing, ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining},
-                Address = new Address() { AddressLine1 = "1001 st", City = "St Louis", State = "MO", Zip = "63103"}
-            };
 
-            var shelter1Beds = new List<Bed>
+                var shelterForMen = new Shelter
+                {
+                    Name = $"Shelter for men {i}",
+                    Type = ShelterType.Men,
+                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.PermanentHousing, ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining },
+                    Address = new Address() { AddressLine1 = "1001 st", City = "St Louis", State = "MO", Zip = "63103" }
+                };
+
+                var beds = new List<Bed>
             {
                 new Bed
                 {
                     Number = "1A",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter1
+                    Shelter = shelterForMen
                 },
 
                 new Bed
@@ -48,36 +50,40 @@ namespace HomelessHelper.Test
                     Number = "1B",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter1
+                    Shelter = shelterForMen
                 },
                 new Bed
                 {
                     Number = "1C",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter1
+                    Shelter = shelterForMen
                 }
             };
-            shelter1.Beds = shelter1Beds;
+                shelterForMen.Beds = beds;
 
-            _context.Shelters.Add(shelter1);
+                _context.Shelters.Add(shelterForMen);
+            }
 
-            var shelter2 = new Shelter
+            for (int i = 0; i < 100; i++)
             {
-                Name = "Family shelter",
-                Type = ShelterType.Family,
-                ServicesOffered = new List<ServicesOffered>() { ServicesOffered.PermanentHousing, ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining },
-                Address = new Address() { AddressLine1 = "2001 st", City = "St Louis", State = "MO", Zip = "63104" }
-            };
 
-            var shelter2Beds = new List<Bed>
+                var shelterForFamilty = new Shelter
+                {
+                    Name = $"Family shelter {i}",
+                    Type = ShelterType.Family,
+                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.PermanentHousing, ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining },
+                    Address = new Address() { AddressLine1 = "2001 st", City = "St Louis", State = "MO", Zip = "63104" }
+                };
+
+                var beds = new List<Bed>
             {
                 new Bed
                 {
                     Number = "1A",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter2
+                    Shelter = shelterForFamilty
                 },
 
                 new Bed
@@ -85,34 +91,38 @@ namespace HomelessHelper.Test
                     Number = "1B",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter2
+                    Shelter = shelterForFamilty
                 },
                 new Bed
                 {
                     Number = "1C",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter2
+                    Shelter = shelterForFamilty
                 }
             };
-            shelter2.Beds = shelter2Beds;
-            _context.Shelters.Add(shelter2);
+                shelterForFamilty.Beds = beds;
+                _context.Shelters.Add(shelterForFamilty);
 
-            var shelter3 = new Shelter
+            }
+
+            for (int i = 0; i < 100; i++)
             {
-                Name = "LGBT shelter",
-                Type = ShelterType.LGBT,
-                ServicesOffered = new List<ServicesOffered>() { ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining },
-                Address = new Address() { AddressLine1 = "3001 st", City = "St Louis", State = "MO", Zip = "63105" }
-            };
-            var shelter3Beds = new List<Bed>
+                var shelterForLGBT = new Shelter
+                {
+                    Name = $"LGBT shelter {i}",
+                    Type = ShelterType.LGBT,
+                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining },
+                    Address = new Address() { AddressLine1 = "3001 st", City = "St Louis", State = "MO", Zip = "63105" }
+                };
+                var beds = new List<Bed>
             {
                 new Bed
                 {
                     Number = "1A",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter3
+                    Shelter = shelterForLGBT
                 },
 
                 new Bed
@@ -120,34 +130,38 @@ namespace HomelessHelper.Test
                     Number = "1B",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter3
+                    Shelter = shelterForLGBT
                 },
                 new Bed
                 {
                     Number = "1C",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter3
+                    Shelter = shelterForLGBT
                 }
             };
-            shelter3.Beds = shelter3Beds;
-            _context.Shelters.Add(shelter3);
+                shelterForLGBT.Beds = beds;
+                _context.Shelters.Add(shelterForLGBT);
 
-            var shelter4 = new Shelter
+            }
+
+            for (int i = 0; i < 100; i++)
             {
-                Name = "Shelter for Women",
-                Type = ShelterType.Women,
-                ServicesOffered = new List<ServicesOffered>() {ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment, ServicesOffered.MedicalServic},
-                Address = new Address() { AddressLine1 = "4001 st", City = "St Louis", State = "MO", Zip = "63106" }
-            };
-            var shelter4Beds = new List<Bed>
+                var shelterForWomen = new Shelter
+                {
+                    Name = $" Shelter for Women {i}",
+                    Type = ShelterType.Women,
+                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment, ServicesOffered.MedicalServic },
+                    Address = new Address() { AddressLine1 = "4001 st", City = "St Louis", State = "MO", Zip = "63106" }
+                };
+                var beds = new List<Bed>
             {
                 new Bed
                 {
                     Number = "1A",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter4
+                    Shelter = shelterForWomen
                 },
 
                 new Bed
@@ -155,34 +169,38 @@ namespace HomelessHelper.Test
                     Number = "1B",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter4
+                    Shelter = shelterForWomen
                 },
                 new Bed
                 {
                     Number = "1C",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter4
+                    Shelter = shelterForWomen
                 }
             };
-            shelter4.Beds = shelter4Beds;
-            _context.Shelters.Add(shelter4);
+                shelterForWomen.Beds = beds;
+                _context.Shelters.Add(shelterForWomen);
 
-            var shelter5 = new Shelter
+            }
+            for (int i = 0; i < 100; i++)
             {
-                Name = "Shelter for Women with children",
-                Type = ShelterType.WomenWithChildren,
-                ServicesOffered = new List<ServicesOffered>() {ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment },
-                Address = new Address() { AddressLine1 = "5001 st", City = "St Louis", State = "MO", Zip = "63107" }
-            };
-            var shelter5Beds = new List<Bed>
+
+                var shelterForWomenAndChild = new Shelter
+                {
+                    Name = $"Shelter for Women with children {i}",
+                    Type = ShelterType.WomenWithChildren,
+                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment },
+                    Address = new Address() { AddressLine1 = "5001 st", City = "St Louis", State = "MO", Zip = "63107" }
+                };
+                var beds = new List<Bed>
             {
                 new Bed
                 {
                     Number = "1A",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter5
+                    Shelter = shelterForWomenAndChild
                 },
 
                 new Bed
@@ -190,27 +208,32 @@ namespace HomelessHelper.Test
                     Number = "1B",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter5
+                    Shelter = shelterForWomenAndChild
                 },
                 new Bed
                 {
                     Number = "1C",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter5
+                    Shelter = shelterForWomenAndChild
                 }
             };
-            shelter5.Beds = shelter5Beds;
-            _context.Shelters.Add(shelter5);
+                shelterForWomenAndChild.Beds = beds;
+                _context.Shelters.Add(shelterForWomenAndChild);
 
-            var shelter6 = new Shelter
+            }
+            for (int i = 0; i < 100; i++)
             {
-                Name = "Shelter for youth",
-                Type = ShelterType.Youth,
-                ServicesOffered = new List<ServicesOffered>() {ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment },
-                Address = new Address() { AddressLine1 = "6001 st", City = "St Louis", State = "MO", Zip = "63108" }
-            };
-            var shelter6Beds = new List<Bed>
+
+
+                var shelter6 = new Shelter
+                {
+                    Name = $"Shelter for youth {i} ",
+                    Type = ShelterType.Youth,
+                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment },
+                    Address = new Address() { AddressLine1 = "6001 st", City = "St Louis", State = "MO", Zip = "63108" }
+                };
+                var shelter6Beds = new List<Bed>
             {
                 new Bed
                 {
@@ -235,9 +258,49 @@ namespace HomelessHelper.Test
                     Shelter = shelter6
                 }
             };
-            shelter6.Beds = shelter6Beds;
-            _context.Shelters.Add(shelter6);
+                shelter6.Beds = shelter6Beds;
+                _context.Shelters.Add(shelter6);
 
+
+            }
+            for (int i = 0; i < 100; i++)
+            {
+                var veteransShelter = new Shelter
+                {
+                    Name = $"Shelter for veterans {i}",
+                    Type = ShelterType.Veterans,
+                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment },
+                    Address = new Address() { AddressLine1 = "6001 st", City = "St Louis", State = "MO", Zip = "63108" }
+                };
+                var beds = new List<Bed>
+            {
+                new Bed
+                {
+                    Number = "1A",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = veteransShelter
+                },
+
+                new Bed
+                {
+                    Number = "1B",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = veteransShelter
+                },
+                new Bed
+                {
+                    Number = "1C",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = veteransShelter
+                }
+            };
+                veteransShelter.Beds = beds;
+                _context.Shelters.Add(veteransShelter);
+
+            }
             _context.SaveChanges();
         }
     }

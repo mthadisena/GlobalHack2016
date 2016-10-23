@@ -29,7 +29,7 @@ namespace HomelessHelper.Controllers
 
         private List<Client> GetHomeless(string searchTerm = null)
         {
-            return new GetClientsQuery(_dbContext).Query(searchTerm);
+            return new GetClientsQuery(_dbContext).Query(searchTerm).Take(50).ToList();
         }
     }
 
