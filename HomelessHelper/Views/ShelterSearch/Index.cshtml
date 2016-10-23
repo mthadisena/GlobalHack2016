@@ -21,7 +21,7 @@
     <tbody>
         @foreach (var shelter in Model.Results)
         {
-            <tr data-toggle="modal" data-target="#myModal" data-id="@shelter.ShelterId">
+            <tr data-toggle="modal" data-target="#myModal" style="cursor: pointer" data-id="@shelter.ShelterId">
                 <td>@shelter.ShelterName</td>
                 <td>@shelter.ShelterType</td>
                 <td>@shelter.NumberOfBeds</td>
