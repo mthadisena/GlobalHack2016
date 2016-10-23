@@ -204,6 +204,7 @@
     <Compile Include="Controllers\ShelterController.cs" />
     <Compile Include="Controllers\ShelterSearchController.cs" />
     <Compile Include="Controllers\ViewClientController.cs" />
+    <Compile Include="Controllers\ViewShelterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -291,6 +292,7 @@
     <Content Include="Views\Shelter\Index.cshtml" />
     <Content Include="Views\ViewClient\Index.cshtml" />
     <Content Include="Views\EditInTake\Index.cshtml" />
+    <Content Include="Views\ViewShelter\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
