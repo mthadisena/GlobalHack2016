@@ -12,6 +12,18 @@ namespace HomelessHelper.Controllers
         {
             return PartialView("Index", new GetShelterQuery().Query(id));
         }
+
+        [HttpPost]
+        public ActionResult CheckOut(Client client)
+        {
+            var dbContext = new HomelessHelperDbContext();
+            dbContext.Clients.Attach(client);
+            client.Shelter = null;
+            client.Bed = null;
+            client.BedNumber = -1;
+            dbContext.SaveChanges();
+            return Json(true);
+        }
     }
 
     public class GetShelterQuery

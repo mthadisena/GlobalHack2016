@@ -1,10 +1,6 @@
 ﻿@using HomelessHelper.Core.Infrastructure
 @model HomelessHelper.Core.Domain.Shelter
 
-@{
-    Layout = null;
-}
-
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <h4 class="modal-title" id="myModalLabel">@Model.Name</h4>
@@ -29,7 +25,7 @@
                     <td>@client.SSN.MaskSSN()</td>
                     <td>@client.BedNumber</td>
                     <td>@(client.DateOfBirth?.ToString("MM/dd/yyyy"))</td>
-                    <td>Check Out</td>
+                    <td><input type="button" name="Check Out" id="check-out-button" data-id="@client.Id"/></td>
                 </tr>
             }
         </table>
@@ -39,3 +35,18 @@
         <span>No Available Clients</span>
     }
 </div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document)
+            .ready(function() {
+                $("check-out-button")
+                    .click(function(e) {
+                        var button = $(e.relatedTarget);
+                        var shelterId = button.data('id');
+                        var url = "~/ViewShelter/Checkout?id=" + shelterId;
+                        $.post(url);
+                    });
+            });
+    </script>
+}

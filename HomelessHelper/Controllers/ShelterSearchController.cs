@@ -33,6 +33,15 @@ namespace HomelessHelper.Controllers
             return View("Index", model);
         }
 
+        public ActionResult CheckOut(Client client)
+        {
+            var dbContext = new HomelessHelperDbContext();
+            dbContext.Clients.Attach(client);
+            client.Shelter = null;
+            dbContext.SaveChanges();
+            return Json(true);
+        }
+
 
         private IEnumerable<ShelterSearchResltsModel> GetShelters(string searchInput)
         {
