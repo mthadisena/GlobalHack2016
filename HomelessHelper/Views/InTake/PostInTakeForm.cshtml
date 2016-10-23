@@ -3,22 +3,63 @@
 @{
     ViewBag.Title = "Confirmation";
 }
+
+<style>
+    #results {
+        font-size: 24px;
+        width: 100%;
+    }
+
+    #success-alert {
+        padding-bottom: 371px;
+    }
+
+    #address {
+        width: 60%;
+    }
+    #alert-address {
+        font-size: 36px;
+        float: left;
+    }
+
+    #alert-address2 {
+        font-size: 36px;
+        float: left;
+        clear: left;
+    }
+
+    #map {
+        float: right;
+        margin-left: 45em;
+        margin-top: -8em;
+        width: 40%;
+    }
+</style>
 <br />
-@if (Model.IsBooked)
-{
-    <div class="alert alert-success" role="alert">
-        <div> Congratulations! <b>@Model.Name</b> is now assigned to</div>
-       @if (@Model.Address != null)
-       { 
-        <div> @Model.Message</div>
-        <div> @string.Format("{0} {1} {2}", Model.Address.AddressLine1, Model.Address.AddressLine2, Model.Address.AddressLine3)</div>
-        <div> @string.Format("{0}, {1} {2}", Model.Address.City, Model.Address.State, Model.Address.Zip)</div>
-       }
-    </div>
+<div id="results" class="col-md-12">
+    @if (Model.IsBooked)
+    {
+        <div class="alert alert-success" id="success-alert" role="alert">
+            <div id="alert-head"> Congratulations! <b>@Model.Name</b> is now assigned to:</div>
+            @if (@Model.Address != null)
+            {
+                <div id="alert-message"> @Model.Message</div><br />
+                <div id="address">
+                    <div id="alert-address"> @string.Format("{0} {1} {2}", Model.Address.AddressLine1, Model.Address.AddressLine2, Model.Address.AddressLine3)</div>
+                    <div id="alert-address2"> @string.Format("{0}, {1} {2}", Model.Address.City, Model.Address.State, Model.Address.Zip)</div>
+                </div>
+                <img id="map" src="https://maps.googleapis.com/maps/api/staticmap?markers=@Url.Encode(Model.Address.AddressLine1),@Url.Encode(Model.Address.City),@Url.Encode(Model.Address.State)&zoom=15&size=400x400&key=AIzaSyAjjAUpLXMy6_ut-85L_kF0-5xWiXIGBGA" />
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            Sorry <b>@Model.Name</b>,  @Model.Message  We will contact you soon.
+        </div>
+    }
+</div>
+@section scripts {
 }
-else
-{
-    <div class="alert alert-danger" role="alert">
-        Sorry <b>@Model.Name</b>,  @Model.Message  We will contact you soon.
-    </div>
-} 
+
+
