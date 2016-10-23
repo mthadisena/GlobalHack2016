@@ -12,11 +12,11 @@ namespace HomelessHelper.Controllers
 {
     public class InTakeController : Controller
     {
-        private readonly HomelessHelperDbContext dbContext;
+        private readonly HomelessHelperDbContext _dbContext;
 
         public InTakeController()
         {
-            dbContext = new HomelessHelperDbContext();
+            _dbContext = new HomelessHelperDbContext();
         }
         public ActionResult Index()
         {
@@ -26,7 +26,7 @@ namespace HomelessHelper.Controllers
         [HttpPost]
         public ActionResult PostInTakeForm(InTakeModel model)
         { 
-            ShelterType shelterType = ShelterType.Men;
+            var shelterType = ShelterType.Men;
 
            
             if (ModelState.IsValid) 
@@ -49,36 +49,19 @@ namespace HomelessHelper.Controllers
                     clientToAdd.VetStatus = model.VetStatus;
                 }
 
-                if (model.Gender == Gender.Male)
-                {
-                    shelterType = ShelterType.Men;
-                }
-                else if (model.Gender == Gender.Female)
-                {
-                    shelterType = ShelterType.Women;
-                }
-                else if (model.Gender == Gender.ClientDoesNotKnow)
-                {
-                    shelterType = ShelterType.Family;
-                }
-                else if (model.Gender == Gender.TransgenderFemaleToMale)
-                {
-                    shelterType = ShelterType.LGBT;
-                }
-                else if (model.Gender == Gender.TransgenderMaleToFemale)
-                {
-                    shelterType = ShelterType.LGBT;
-                }
+                shelterType = ShelterTypeMapper.Map[model.Gender];
+             
                 if (model.IsVet)
                 {
                     shelterType = ShelterType.Veterans;
                 }
+                 
+                _dbContext.Clients.Add(clientToAdd);
 
+                var shelterMatcherResult = new ShelterMatcher().Match(clientToAdd, shelterType, _dbContext);
 
-                dbContext.Clients.Add(clientToAdd);
-                var shelterMatcherResponse = new ShelterMatcher().Match(clientToAdd, shelterType, dbContext);
-                dbContext.SaveChanges();
-                return View(shelterMatcherResponse);
+                _dbContext.SaveChanges();
+                return View(shelterMatcherResult);
             }; 
             return Json(false);
         }
