@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.EntityFramework;
 
-namespace HomelessHelper.Controllers
+namespace HomelessHelper.Core.Service
 {
     public class GetClientBedBookings
     {
-        private HomelessHelperDbContext _context;
+        private readonly HomelessHelperDbContext _context = new HomelessHelperDbContext();
         public List<BedBooking> Query(Guid clientId)
         {
-            return _context.BedBookings.Where(x => x.ClientId == clientId).ToList();
+            return _context.BedBookings
+                .Include(x => x.Shelter)
+                .Include(x => x.Bed)
+                .Where(x => x.ClientId == clientId).ToList();
         }
     }
 }

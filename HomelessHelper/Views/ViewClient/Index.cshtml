@@ -3,7 +3,7 @@
 
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h4 class="modal-title" id="myModalLabel">@Model.Client.FirstName @Model.Client.LastName</h4>
+    <h2 class="modal-title" id="myModalLabel">  Client Info</h2>
 </div>
 <div class="modal-body">
     <div class="container">
@@ -12,80 +12,81 @@
                 <div class="panel-heading">Demographics</div>
                 <div class="panel-body">
                     <div>
-                        @Html.LabelFor(model => model.Client.FirstName)<br />
-                        @Html.DisplayFor(model => model.Client.LastName)<br /><br />
+                        @Html.LabelFor(model => model.Client.FirstName)<br/>
+                        @Html.DisplayFor(model => model.Client.LastName)<br/><br/>
                     </div>
                     <div>
-                        @Html.LabelFor(model => model.Client.MiddleName)<br />
-                        @Html.DisplayFor(model => model.Client.MiddleName)<br /><br />
+                        @Html.LabelFor(model => model.Client.MiddleName)<br/>
+                        @Html.DisplayFor(model => model.Client.MiddleName)<br/><br/>
                     </div>
                     <div>
-                        @Html.LabelFor(model => model.Client.LastName)<br />
-                        @Html.DisplayFor(model => model.Client.LastName)<br /><br />
+                        @Html.LabelFor(model => model.Client.LastName)<br/>
+                        @Html.DisplayFor(model => model.Client.LastName)<br/><br/>
                     </div>
                     <div>
-                        @Html.LabelFor(model => model.Client.DateOfBirthFormatted)<br />
-                        @Html.DisplayFor(model => model.Client.DateOfBirthFormatted)<br /><br />
+                        @Html.LabelFor(model => model.Client.DateOfBirthFormatted)<br/>
+                        @Html.DisplayFor(model => model.Client.DateOfBirthFormatted)<br/><br/>
                     </div>
                     <div>
-                        @Html.LabelFor(model => model.Client.Email)<br />
-                        @Html.DisplayFor(model => model.Client.Email)<br /><br />
+                        @Html.LabelFor(model => model.Client.Email)<br/>
+                        @Html.DisplayFor(model => model.Client.Email)<br/><br/>
                     </div>
                     <div>
-                        @Html.LabelFor(model => model.Client.Ethnicity)<br />
-                        @Html.DisplayFor(model => model.Client.Ethnicity)<br /><br />
+                        @Html.LabelFor(model => model.Client.Ethnicity)<br/>
+                        @Html.DisplayFor(model => model.Client.Ethnicity)<br/><br/>
                     </div>
                 </div>
             </div>
             <div class="panel-default col-sm-4 breadcrumb">
-                <div class="panel-heading">Shelter Info</div><br />
+                <div class="panel-heading">Current Shelter</div><br/>
                 <div>
-                    @Html.LabelFor(model => model.Client.BedNumber)<br />
-                    @Html.DisplayFor(model => model.Client.BedNumber)<br /><br />
+                    @Html.LabelFor(model => model.Client.BedNumber)<br/>
+                    @Html.DisplayFor(model => model.Client.BedNumber)<br/><br/>
                 </div>
                 <div>
-                    @Html.LabelFor(model => model.Client.ClientStatus)<br />
-                    @Html.DisplayFor(model => model.Client.ClientStatus)<br /><br />
+                    @Html.LabelFor(model => model.Client.ClientStatus)<br/>
+                    @Html.DisplayFor(model => model.Client.ClientStatus)<br/><br/>
                 </div>
                 <div>
-                    @Html.LabelFor(model => model.Client.Shelter.Address)<br />
-                    @Html.DisplayFor(model => model.Client.Shelter.Address)<br /><br />
+                    @Html.LabelFor(model => model.Client.Shelter.Address)<br/>
+                    @Html.DisplayFor(model => model.Client.Shelter.Address)<br/><br/>
                 </div>
                 <div>
-                    @Html.LabelFor(model => model.Client.Shelter.Name)<br />
-                    @Html.DisplayFor(model => model.Client.Shelter.Name)<br /><br />
+                    @Html.LabelFor(model => model.Client.Shelter.Name)<br/>
+                    @Html.DisplayFor(model => model.Client.Shelter.Name)<br/><br/>
                 </div>
                 <div>
-                    @Html.LabelFor(model => model.Client.Shelter.Type)<br />
-                    @Html.DisplayFor(model => model.Client.Shelter.Type)<br /><br />
+                    @Html.LabelFor(model => model.Client.Shelter.Type)<br/>
+                    @Html.DisplayFor(model => model.Client.Shelter.Type)<br/><br/>
                 </div>
             </div>
             <div class="panel-default col-sm-4 breadcrumb">
                 <div class="panel-heading">Veteran Infos</div>
                 <div class="panel-body">
                     <div>
-                        @Html.LabelFor(model => model.Client.VeteranStatus)<br />
-                        @Html.DisplayFor(model => model.Client.VeteranStatus)<br /><br />
+                        @Html.LabelFor(model => model.Client.VeteranStatus)<br/>
+                        @Html.DisplayFor(model => model.Client.VeteranStatus)<br/><br/>
                     </div>
                     <div>
-                        @Html.LabelFor(model => model.Client.Veteran)<br />
-                        @Html.DisplayFor(model => model.Client.Veteran)<br /><br />
+                        @Html.LabelFor(model => model.Client.Veteran)<br/>
+                        @Html.DisplayFor(model => model.Client.Veteran)<br/><br/>
                     </div>
                     @foreach (var war in Model.Client.WarServices)
                     {
                         <div>
-                            War: @war.WarServedIn 
+                            War: @war.WarServedIn
                             <br/>
                             Year Started: @war.YearStarted.ToShortDateString()
-                            <br />
+                            <br/>
                             Year Ended: @war.YearEnded.ToShortDateString()
                         </div>
-                    }                   
+                    }
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="container">
+                <h2>Shelter History</h2>
                 <table class="table table-striped" style="width: 100%">
                     <tr>
                         <th>Shelter</th>
@@ -95,7 +96,7 @@
                     </tr>
                     @foreach (var bedbooking in Model.BedBookings.OrderBy(x => x.CheckInDate))
                     {
-                        <tr>                          
+                        <tr>
                             <td>@bedbooking.Shelter.Name</td>
                             <td>@bedbooking.Bed.Number</td>
                             <td>@(bedbooking.CheckInDate?.ToString("MM/dd/yyyy"))</td>
