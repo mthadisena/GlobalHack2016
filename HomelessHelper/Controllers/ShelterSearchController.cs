@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.EntityFramework;
 using HomelessHelper.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace HomelessHelper.Controllers
 {
@@ -13,20 +14,20 @@ namespace HomelessHelper.Controllers
     {
         public ActionResult Index()
         {
-            var model = new ShelterSearchModel();
+            var results = GetShelters(null);
+            var model = new ShelterSearchModel() {Results = results};
 
             return View("Index", model);
         }
 
-        public ActionResult Search(string SearchTerm)
+        public ActionResult Search(string searchTerm)
         {
+            var results = GetShelters(searchTerm);
+
             var model = new ShelterSearchModel
             {
-                SearchTerm = SearchTerm,
-                Results = new List<ShelterSearchResltsModel>
-                {
-                    new ShelterSearchResltsModel {ShelterName = "Blah", NumberOfBeds = 20}
-                }
+                SearchTerm = searchTerm,
+                Results = results
             };
 
             return View("Index", model);
