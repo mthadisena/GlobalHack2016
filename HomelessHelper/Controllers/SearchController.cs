@@ -29,7 +29,7 @@ namespace HomelessHelper.Controllers
 
         private List<Client> GetHomeless(string searchTerm = null)
         {
-            return new GetClientsQuery(_dbContext).Query(searchTerm).Take(50).ToList();
+            return new GetClientsQuery(_dbContext).Query(searchTerm).ToList();
         }
     }
 
@@ -44,30 +44,31 @@ namespace HomelessHelper.Controllers
 
         public List<Client> Query(string searchTerm)
         {
-            if (string.IsNullOrEmpty(searchTerm))
-            {
-                return _context.Clients.ToList();
-            }
-
+            var result  = new List<Client>();
             DateTime date;
             var tryDate = DateTime.TryParse(searchTerm, out date);
-
-            if (tryDate)
-            {
-                return _context.Clients.Where(x => x.DateOfBirth == date).ToList();
-            }
-
             long ssn;
             var trySSN = long.TryParse(searchTerm, out ssn);
-            if (searchTerm.Length == 4 && trySSN)
+            if (string.IsNullOrEmpty(searchTerm))
             {
-                return _context.Clients.Where(x => x.SSN.Contains(ssn.ToString())).ToList();
+                result = _context.Clients.ToList();
             }
-
-            return _context.Clients
-                .Where(x => x.FirstName.Contains(searchTerm) 
-                    || x.MiddleName.Contains(searchTerm)
-                    || x.LastName.Contains(searchTerm)).ToList();
+            else if (tryDate)
+            {
+                result = _context.Clients.Where(x => x.DateOfBirth == date).ToList();
+            }
+            else if (searchTerm.Length == 4 && trySSN)
+            {
+                result = _context.Clients.Where(x => x.SSN.Contains(ssn.ToString())).ToList();
+            }
+            else
+            {
+                result = _context.Clients
+               .Where(x => x.FirstName.Contains(searchTerm)
+                   || x.MiddleName.Contains(searchTerm)
+                   || x.LastName.Contains(searchTerm)).ToList();
+            }
+            return result.OrderBy(x => string.IsNullOrEmpty(x.LastName)).ThenBy(x => x.LastName).Take(50).ToList();
         }
     }
 }
