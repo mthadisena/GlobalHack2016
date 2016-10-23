@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.EntityFramework;
+using HomelessHelper.Models;
 
 namespace HomelessHelper.Controllers
 {
@@ -29,9 +31,30 @@ namespace HomelessHelper.Controllers
     public class GetShelterQuery
     {
         private readonly HomelessHelperDbContext _context = new HomelessHelperDbContext();
-        public Shelter Query(Guid id)
+        public ShelterDetailsModel Query(Guid guid)
         {
-            return _context.Shelters.FirstOrDefault(x => x.Id == id);
+            //return _context.Shelters.FirstOrDefault(x => x.Id == id);
+
+            var model = new ShelterDetailsModel();
+
+            model.Shelter = _context.Shelters.FirstOrDefault(x => x.Id == guid);
+
+            //var guid = new Guid("4D1D68F4-D8CB-427C-986B-0DCC995F7964");
+            var bedsInShelter = _context.Beds.Where(x => x.Shelter.Id == guid).ToList();
+
+            var aaa = _context.BedBookings.Where(x => x.Bed.Shelter.Id == guid).ToList();
+
+            var Clients = new List<Client>();
+
+            bedsInShelter.ForEach(x =>
+            {
+                var clientIds = _context.BedBookings.Where(b => b.Bed.Id == x.Id).Select(y => y.ClientId).ToList();
+
+                Clients.AddRange(_context.Clients.Where(c => clientIds.Contains(c.Id)).ToList());
+            });
+
+            model.Clients = Clients;
+            return model;
         }
     }
 }

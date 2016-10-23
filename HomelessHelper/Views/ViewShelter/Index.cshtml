@@ -1,9 +1,9 @@
 ﻿@using HomelessHelper.Core.Infrastructure
-@model HomelessHelper.Core.Domain.Shelter
+@model HomelessHelper.Models.ShelterDetailsModel
 
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h4 class="modal-title" id="myModalLabel">@Model.Name</h4>
+    <h4 class="modal-title" id="myModalLabel">@Model.Shelter.Name</h4>
 </div>
 <div class="modal-body">
     @if (Model.Clients.Any())
