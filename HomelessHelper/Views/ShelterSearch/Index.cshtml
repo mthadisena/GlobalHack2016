@@ -12,7 +12,15 @@
         <div>
             <label>Results</label>
         </div>
-        <div id="searchResults"></div>
+        <table id="searchResults">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th align="right">Available Beds</th>
+                </tr>
+            </thead>
+            <tbody id="tableData"></tbody>
+        </table>
     </form>
 </div>
 @section scripts
@@ -32,7 +40,7 @@
                                 url: "@Url.Action("Search")",
                                 dataType: 'html',
                                 success: function(data) {
-                                    $('#searchResults').html(data);
+                                    $('#tableData').html(data);
                                 }
                             });
                         }
