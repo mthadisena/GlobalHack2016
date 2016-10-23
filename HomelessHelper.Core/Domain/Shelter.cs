@@ -16,6 +16,7 @@ namespace HomelessHelper.Core.Domain
         public List<BedBooking> Bookings { get; set; } = new List<BedBooking>();
         public Address Address { get; set; }
         public int BedsAvailable => Beds.Count - Clients.Count;
+        public List<ServicesOffered> ServicesOffered { get; set; }
 
         public void AddBed(Bed bed)
         {
