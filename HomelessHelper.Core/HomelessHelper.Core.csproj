@@ -65,7 +65,8 @@
     <Compile Include="Domain\Enum\Race.cs" />
     <Compile Include="Domain\Enum\RelationshipToHeadOfHousehold.cs" />
     <Compile Include="Domain\Enum\ResidenceStatusCategory.cs" />
-    <Compile Include="Domain\Enum\ServicesOffered.cs" />
+    <Compile Include="Domain\Enum\ServiceType.cs" />
+    <Compile Include="Domain\ServicesOffered.cs" />
     <Compile Include="Domain\Enum\ShelterTypeMapper.cs" />
     <Compile Include="Domain\Enum\SSNDataQuality.cs" />
     <Compile Include="Domain\Enum\TimesHomeless.cs" />
