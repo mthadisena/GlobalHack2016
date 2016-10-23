@@ -27,7 +27,7 @@ namespace HomelessHelper.Test
             for (int i = 0; i < 100; i++)
             {
 
-                var shelterForMen = new Shelter
+                var shelterForMen = new Core.Domain.Shelter
                 {
                     Name = $"Shelter for men {i}",
                     Type = ShelterType.Men,
@@ -77,7 +77,7 @@ namespace HomelessHelper.Test
             for (int i = 0; i < 100; i++)
             {
 
-                var shelterForFamilty = new Shelter
+                var shelterForFamilty = new Core.Domain.Shelter
                 {
                     Name = $"Family shelter {i}",
                     Type = ShelterType.Family,
@@ -124,7 +124,7 @@ namespace HomelessHelper.Test
 
             for (int i = 0; i < 100; i++)
             {
-                var shelterForLGBT = new Shelter
+                var shelterForLGBT = new Core.Domain.Shelter
                 {
                     Name = $"LGBT shelter {i}",
                     Type = ShelterType.LGBT,
@@ -171,7 +171,7 @@ namespace HomelessHelper.Test
 
             for (int i = 0; i < 100; i++)
             {
-                var shelterForWomen = new Shelter
+                var shelterForWomen = new Core.Domain.Shelter
                 {
                     Name = $" Shelter for Women {i}",
                     Type = ShelterType.Women,
@@ -219,7 +219,7 @@ namespace HomelessHelper.Test
             for (int i = 0; i < 100; i++)
             {
 
-                var shelterForWomenAndChild = new Shelter
+                var shelterForWomenAndChild = new Core.Domain.Shelter
                 {
                     Name = $"Shelter for Women with children {i}",
                     Type = ShelterType.WomenWithChildren,
@@ -267,7 +267,7 @@ namespace HomelessHelper.Test
             {
 
 
-                var shelter6 = new Shelter
+                var shelter6 = new Core.Domain.Shelter
                 {
                     Name = $"Shelter for youth {i} ",
                     Type = ShelterType.Youth,
@@ -314,7 +314,7 @@ namespace HomelessHelper.Test
             }
             for (int i = 0; i < 100; i++)
             {
-                var veteransShelter = new Shelter
+                var veteransShelter = new Core.Domain.Shelter
                 {
                     Name = $"Shelter for veterans {i}",
                     Type = ShelterType.Veterans,
