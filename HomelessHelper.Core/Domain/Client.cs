@@ -17,6 +17,7 @@ namespace HomelessHelper.Core.Domain
         public string SSN { get; set; }
         public SSNDataQuality SsnDataQuality { get; set; }
         public DateTime? DateOfBirth { get; set; }
+        public string DateOfBirthFormatted => DateOfBirth?.ToString("MM/dd/yyyy");
         public string Condition { get; set; }
         public string Description { get; set; }
         public bool Veteran { get; set; }

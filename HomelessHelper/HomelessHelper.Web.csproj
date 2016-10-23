@@ -196,15 +196,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EditInTakeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InTakeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ShelterController.cs" />
     <Compile Include="Controllers\ShelterSearchController.cs" />
+    <Compile Include="Controllers\ViewClientController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CheckOutModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InTakeModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -240,6 +244,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\postIntake.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -283,6 +288,9 @@
     <Content Include="Views\Staff\Index.cshtml" />
     <Content Include="Views\ShelterSearch\Index.cshtml" />
     <Content Include="Views\ShelterSearch\ShelterSearchResults.cshtml" />
+    <Content Include="Views\Shelter\Index.cshtml" />
+    <Content Include="Views\ViewClient\Index.cshtml" />
+    <Content Include="Views\EditInTake\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
