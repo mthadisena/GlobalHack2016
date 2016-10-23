@@ -1,6 +1,6 @@
 ﻿namespace HomelessHelper.Core.Domain.Enum
 {
-    public enum ServicesOffered
+    public enum ServiceType
     {
         TemporaryHousing,
         PermanentHousing,
