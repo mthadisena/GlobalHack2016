@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.Domain.Enum;
@@ -56,9 +57,16 @@ namespace HomelessHelper.Controllers
                     shelterType = ShelterType.Veterans;
                 }
                  
-                _dbContext.Clients.Add(clientToAdd);
-
                 var shelterMatcherResult = new ShelterMatcher().Match(clientToAdd, shelterType, _dbContext);
+
+                //clientToAdd.Shelter =  shelterMatcherResult.IsBooked? shelterMatcherResult.Shelter: null;
+                if (shelterMatcherResult.IsBooked)
+                {
+                    //clientToAdd.Shelter = shelterMatcherResult.Shelter;
+                    _dbContext.BedBookings.Add(Reserve(clientToAdd, shelterType, shelterMatcherResult.Shelter));
+                }
+
+                _dbContext.Clients.Add(clientToAdd);
 
                 _dbContext.SaveChanges();
                 return View(shelterMatcherResult);
@@ -66,18 +74,20 @@ namespace HomelessHelper.Controllers
             return Json(false);
         }
 
-        [HttpPost]
-        public ActionResult Save(InTakeModel model)
+        private BedBooking Reserve(Client client, ShelterType shelterType, Shelter shelter)
         {
-            //TODO: business logic here to find shelter and book avaliable bed
-
-            var response = new JsonPartialResult()
+            var availablebeds = _dbContext.Beds.Where(x => x.Shelter.Type == shelterType && x.BedStatus == BedStatus.Vacant).ToList();
+            //var firstAvailableBed = shelter.Beds.Find(x => x.BedStatus == BedStatus.Vacant);
+            if (!availablebeds.Any()) return null;
+            
+            return new BedBooking()
             {
-                Status = JsonResultStatus.Successful,
-                Message = "Successfully Submitted"
+                ClientId = client.Id,
+                Bed = availablebeds[0],
+                Shelter = availablebeds[0].Shelter,
+                CheckInDate = DateTime.Today
             };
 
-            return Json(response, JsonRequestBehavior.AllowGet);
         }
     }
 }

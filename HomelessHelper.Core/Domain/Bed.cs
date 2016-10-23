@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using HomelessHelper.Core.Domain.Enum;
 using HomelessHelper.Core.EntityFramework;
 
 namespace HomelessHelper.Core.Domain
@@ -9,7 +10,7 @@ namespace HomelessHelper.Core.Domain
         public string Number { get; set; }
         public string Description { get; set; }
         public string Note { get; set; }
-
+        public BedStatus BedStatus { get; set; }
         public Shelter Shelter { get; set; }
     }
 }
