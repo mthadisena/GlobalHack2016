@@ -36,7 +36,7 @@ namespace HomelessHelper.Core.Service
                     return new ShelterMatcherResponse
                     {
                         IsBooked = true,
-                        Message = $"Shelter Name : {shelter[0].Name}. Bed Number: {availableBeds[0].Number}",
+                        Message = $"Shelter Name : {shelter[0].Name}. Bed Number : {availableBeds[0].Number}",
                         Name = $"{client.FirstName} {client.LastName}",
                         Address = shelter[0].Address
 

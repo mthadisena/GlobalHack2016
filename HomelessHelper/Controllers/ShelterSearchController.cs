@@ -34,19 +34,35 @@ namespace HomelessHelper.Controllers
         }
 
 
-        private IEnumerable<Shelter> GetShelters(string searchInput)
+        private IEnumerable<ShelterSearchResltsModel> GetShelters(string searchInput)
         {
             var dbContext = new HomelessHelperDbContext();
 
             if (string.IsNullOrEmpty(searchInput))
             {
-               return dbContext.Shelters.ToList();
+                return dbContext.Shelters.Join(dbContext.Beds, shelter => shelter.Id, bed => bed.Shelter.Id,
+                    (shelter, bed) => new ShelterSearchResltsModel()
+                    {
+                        ShelterId = shelter.Id,
+                        ShelterName = shelter.Name,
+                        ShelterType = shelter.Type,
+                        Beds = shelter.Beds,
+                        ShelterAddress = shelter.Address,
+                        ServicesOffered = shelter.ServicesOffered
+                    }).ToList().Take(15);
             }
 
-            var results = dbContext.Shelters.Where(x =>
-                                                    x.Name == searchInput ||
-                                                    x.Type.ToString().Equals(searchInput, StringComparison.InvariantCultureIgnoreCase) ||
-                                                    x.Address.City == searchInput || x.Address.Zip == searchInput).ToList();
+            var results = dbContext.Shelters.Join(dbContext.Beds, shelter => shelter.Id, bed => bed.Shelter.Id,
+                    (shelter, bed) => new ShelterSearchResltsModel()
+                    {
+                        ShelterId = shelter.Id,
+                        ShelterName = shelter.Name,
+                        ShelterType = shelter.Type,
+                        Beds = shelter.Beds,
+                        ShelterAddress = shelter.Address,
+                        ServicesOffered = shelter.ServicesOffered
+                    }).Where(x=>x.ShelterName.Contains(searchInput) || x.ShelterType.ToString().Equals(searchInput, StringComparison.InvariantCultureIgnoreCase) || 
+                    x.ShelterAddress.City.Equals(searchInput, StringComparison.InvariantCultureIgnoreCase) || x.ShelterAddress.Zip == searchInput).ToList().Take(15);
             
             return results;
         }

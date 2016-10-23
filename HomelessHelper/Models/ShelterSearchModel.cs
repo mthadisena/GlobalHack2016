@@ -6,11 +6,11 @@ namespace HomelessHelper.Models
     public class ShelterSearchModel
     {
         public string SearchTerm { get; set; }
-        public IEnumerable<Shelter> Results { get; set; }
+        public IEnumerable<ShelterSearchResltsModel> Results { get; set; }
 
         public ShelterSearchModel()
         {
-            Results = new List<Shelter>();
+            Results = new List<ShelterSearchResltsModel>();
         }
             
     }
