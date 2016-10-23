@@ -60,6 +60,8 @@ namespace HomelessHelper.Controllers
 
                 var shelterMatcherResult = new ShelterMatcher().Match(clientToAdd, shelterType, _dbContext);
 
+                //clientToAdd.Shelter =  shelterMatcherResult.IsBooked? shelterMatcherResult.Shelter: null;
+
                 _dbContext.SaveChanges();
                 return View(shelterMatcherResult);
             }; 
