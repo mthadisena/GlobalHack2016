@@ -237,6 +237,41 @@ namespace HomelessHelper.Test
             };
             shelter6.Beds = shelter6Beds;
             _context.Shelters.Add(shelter6);
+            
+            var shelter7 = new Shelter
+            {
+                Name = "Shelter for veterans",
+                Type = ShelterType.Veterans,
+                ServicesOffered = new List<ServicesOffered>() { ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment },
+                Address = new Address() { AddressLine1 = "6001 st", City = "St Louis", State = "MO", Zip = "63108" }
+            };
+            var shelter7Beds = new List<Bed>
+            {
+                new Bed
+                {
+                    Number = "1A",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = shelter7
+                },
+
+                new Bed
+                {
+                    Number = "1B",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = shelter7
+                },
+                new Bed
+                {
+                    Number = "1C",
+                    Description = "Clean",
+                    Note = "Very Clean",
+                    Shelter = shelter7
+                }
+            };
+            shelter7.Beds = shelter7Beds;
+            _context.Shelters.Add(shelter7);
 
             _context.SaveChanges();
         }
