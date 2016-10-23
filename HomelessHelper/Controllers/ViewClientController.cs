@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Data.Entity;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Web.Mvc;
-using HomelessHelper.Core.Domain;
-using HomelessHelper.Core.EntityFramework;
+using HomelessHelper.Core.Service;
+using HomelessHelper.Models;
 
 namespace HomelessHelper.Controllers
 {
@@ -12,16 +9,12 @@ namespace HomelessHelper.Controllers
     {
         public PartialViewResult Index(Guid id)
         {
-            return PartialView("Index", new GetClientQuery().Query(id));
-        }
-    }
-
-    public class GetClientQuery
-    {
-        private readonly HomelessHelperDbContext _context = new HomelessHelperDbContext();
-        public Client Query(Guid id)
-        {
-            return _context.Clients.Include(x => x.WarServices).FirstOrDefault(x => x.Id == id);
+            var model = new ViewClientModel
+            {
+                BedBookings = new GetClientBedBookings().Query(id),
+                Client = new GetClientQuery().Query(id)
+            };
+            return PartialView("Index", model);
         }
     }
 }

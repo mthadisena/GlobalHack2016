@@ -99,6 +99,8 @@
     <Compile Include="Infrastructure\Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\BedFinder.cs" />
+    <Compile Include="Service\GetClientBedBookings.cs" />
+    <Compile Include="Service\GetClientQuery.cs" />
     <Compile Include="Service\ShelterFinder.cs" />
     <Compile Include="Service\ShelterMatcher.cs" />
     <Compile Include="Staging\DataImporter.cs" />
