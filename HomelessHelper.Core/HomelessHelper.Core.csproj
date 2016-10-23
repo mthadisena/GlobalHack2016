@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Domain\Bed.cs" />
     <Compile Include="Domain\ClientLocation.cs" />
+    <Compile Include="Domain\Enum\BedStatus.cs" />
     <Compile Include="Domain\Enum\ClientStatus.cs" />
     <Compile Include="Domain\BedBooking.cs" />
     <Compile Include="Domain\Enum\DateOfBirthType.cs" />

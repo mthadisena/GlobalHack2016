@@ -29,14 +29,14 @@ namespace HomelessHelper.Core.Service
                     shelter[0].Bookings.Add(new BedBooking
                     {
 
-                        BedNumber = availableBeds[0].Number,
+                        Bed = availableBeds[0],
                         ClientId = client.Id,
                         CheckInDate = DateTime.Today,
                     });
                     return new ShelterMatcherResponse
                     {
                         IsBooked = true,
-                        //Shelter = shelter[0],
+                        Shelter = shelter[0],
                         Message = $"Shelter Name : {shelter[0].Name}. Bed Number : {availableBeds[0].Number}",
                         Name = $"{client.FirstName} {client.LastName}",
                         Address = shelter[0].Address

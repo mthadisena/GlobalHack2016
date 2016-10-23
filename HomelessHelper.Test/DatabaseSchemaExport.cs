@@ -48,7 +48,8 @@ namespace HomelessHelper.Test
                     Number = "1A",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForMen
+                    Shelter = shelterForMen,
+                    BedStatus = BedStatus.Vacant
                 },
 
                 new Bed
@@ -56,14 +57,16 @@ namespace HomelessHelper.Test
                     Number = "1B",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForMen
+                    Shelter = shelterForMen,
+                    BedStatus = BedStatus.Vacant
                 },
                 new Bed
                 {
                     Number = "1C",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForMen
+                    Shelter = shelterForMen,
+                    BedStatus = BedStatus.Vacant
                 }
             };
                 shelterForMen.Beds = beds;
@@ -93,7 +96,8 @@ namespace HomelessHelper.Test
                     Number = "1A",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForFamilty
+                    Shelter = shelterForFamilty,
+                    BedStatus = BedStatus.Vacant
                 },
 
                 new Bed
@@ -101,14 +105,16 @@ namespace HomelessHelper.Test
                     Number = "1B",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForFamilty
+                    Shelter = shelterForFamilty,
+                    BedStatus = BedStatus.Vacant
                 },
                 new Bed
                 {
                     Number = "1C",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForFamilty
+                    Shelter = shelterForFamilty,
+                    BedStatus = BedStatus.Vacant
                 }
             };
                 shelterForFamilty.Beds = beds;
@@ -137,7 +143,8 @@ namespace HomelessHelper.Test
                     Number = "1A",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForLGBT
+                    Shelter = shelterForLGBT,
+                    BedStatus = BedStatus.Vacant
                 },
 
                 new Bed
@@ -145,14 +152,16 @@ namespace HomelessHelper.Test
                     Number = "1B",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForLGBT
+                    Shelter = shelterForLGBT,
+                    BedStatus = BedStatus.Vacant
                 },
                 new Bed
                 {
                     Number = "1C",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForLGBT
+                    Shelter = shelterForLGBT,
+                    BedStatus = BedStatus.Vacant
                 }
             };
                 shelterForLGBT.Beds = beds;
@@ -182,7 +191,8 @@ namespace HomelessHelper.Test
                     Number = "1A",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForWomen
+                    Shelter = shelterForWomen,
+                    BedStatus = BedStatus.Vacant
                 },
 
                 new Bed
@@ -190,14 +200,16 @@ namespace HomelessHelper.Test
                     Number = "1B",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForWomen
+                    Shelter = shelterForWomen,
+                    BedStatus = BedStatus.Vacant
                 },
                 new Bed
                 {
                     Number = "1C",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForWomen
+                    Shelter = shelterForWomen,
+                    BedStatus = BedStatus.Vacant
                 }
             };
                 shelterForWomen.Beds = beds;
@@ -226,7 +238,8 @@ namespace HomelessHelper.Test
                     Number = "1A",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForWomenAndChild
+                    Shelter = shelterForWomenAndChild,
+                    BedStatus = BedStatus.Vacant
                 },
 
                 new Bed
@@ -234,14 +247,16 @@ namespace HomelessHelper.Test
                     Number = "1B",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForWomenAndChild
+                    Shelter = shelterForWomenAndChild,
+                    BedStatus = BedStatus.Vacant
                 },
                 new Bed
                 {
                     Number = "1C",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelterForWomenAndChild
+                    Shelter = shelterForWomenAndChild,
+                    BedStatus = BedStatus.Vacant
                 }
             };
                 shelterForWomenAndChild.Beds = beds;
@@ -271,7 +286,8 @@ namespace HomelessHelper.Test
                     Number = "1A",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter6
+                    Shelter = shelter6,
+                    BedStatus = BedStatus.Vacant
                 },
 
                 new Bed
@@ -279,14 +295,16 @@ namespace HomelessHelper.Test
                     Number = "1B",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter6
+                    Shelter = shelter6,
+                    BedStatus = BedStatus.Vacant
                 },
                 new Bed
                 {
                     Number = "1C",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = shelter6
+                    Shelter = shelter6,
+                    BedStatus = BedStatus.Vacant
                 }
             };
                 shelter6.Beds = shelter6Beds;
@@ -315,7 +333,8 @@ namespace HomelessHelper.Test
                     Number = "1A",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = veteransShelter
+                    Shelter = veteransShelter,
+                    BedStatus = BedStatus.Vacant
                 },
 
                 new Bed
@@ -323,14 +342,16 @@ namespace HomelessHelper.Test
                     Number = "1B",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = veteransShelter
+                    Shelter = veteransShelter,
+                    BedStatus = BedStatus.Vacant
                 },
                 new Bed
                 {
                     Number = "1C",
                     Description = "Clean",
                     Note = "Very Clean",
-                    Shelter = veteransShelter
+                    Shelter = veteransShelter,
+                    BedStatus = BedStatus.Vacant
                 }
             };
                 veteransShelter.Beds = beds;

@@ -31,7 +31,7 @@ namespace HomelessHelper.Core.Service
                 }
                 else
                 {
-                    if (!shelter.Bookings.Any(x => x.BedNumber == bed.Number && x.CheckOutDate == null))
+                    if (!shelter.Bookings.Any(x => x.Bed == bed && x.CheckOutDate == null))
                     { 
                         beds.Add(bed);
                     }
