@@ -29,13 +29,14 @@ namespace HomelessHelper.Core.Service
                     shelter[0].Bookings.Add(new BedBooking
                     {
 
-                        BedNumber = availableBeds[0].Number,
+                        Bed = availableBeds[0],
                         ClientId = client.Id,
                         CheckInDate = DateTime.Today,
                     });
                     return new ShelterMatcherResponse
                     {
                         IsBooked = true,
+                        Shelter = shelter[0],
                         Message = $"Shelter Name : {shelter[0].Name}. Bed Number : {availableBeds[0].Number}",
                         Name = $"{client.FirstName} {client.LastName}",
                         Address = shelter[0].Address
@@ -59,6 +60,7 @@ namespace HomelessHelper.Core.Service
 
 public class ShelterMatcherResponse
 {
+    public Shelter Shelter { get; set; }
     public string Name { get; set; }
     public bool IsBooked { get; set; }
     public string Message { get; set; }

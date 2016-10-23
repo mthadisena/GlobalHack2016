@@ -5,16 +5,16 @@ using HomelessHelper.Core.EntityFramework;
 
 namespace HomelessHelper.Controllers
 {
-    public class ShelterController: Controller
+    public class ShelterController : Controller
     {
         public PartialViewResult Index(Guid id)
         {
             var dbContext = new HomelessHelperDbContext();
 
-            var model = dbContext.Shelters.Where(x => x.Id == id).FirstOrDefault();
+            var model = dbContext.Shelters.FirstOrDefault(x => x.Id == id);
 
-            return PartialView("Index",model);
+            return PartialView("Index", model);
         }
-         
+
     }
 }

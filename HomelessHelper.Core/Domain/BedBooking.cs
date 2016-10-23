@@ -8,7 +8,7 @@ namespace HomelessHelper.Core.Domain
     public class BedBooking : Entity
     {
         public Guid ClientId { get; set; }
-        public string BedNumber { get; set; }
+        public Bed Bed { get; set; }
         public DateTime? CheckInDate { get; set; }
         public DateTime? CheckOutDate { get; set; }
         public Shelter Shelter { get; set; }
