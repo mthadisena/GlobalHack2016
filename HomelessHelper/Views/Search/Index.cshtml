@@ -34,7 +34,7 @@
         @foreach (var client in Model.Clients.OrderByDescending(x => x.LastName))
         {
             <tr>
-                <td>@($"{client.FirstName} {client.MiddleName} {client.LastName}")</td>
+                <td><a href=@Url.Action("Index", "ViewClient", new {id = client.Id})> @($"{client.FirstName} {client.MiddleName} {client.LastName}")</a></td>               
                 <td>@client.UUID</td>
                 <td>@client.SSN.MaskSSN()</td>
                 <td>@client.BedNumber</td>

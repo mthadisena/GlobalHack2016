@@ -31,8 +31,14 @@ namespace HomelessHelper.Test
                 {
                     Name = $"Shelter for men {i}",
                     Type = ShelterType.Men,
-                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.PermanentHousing, ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining },
                     Address = new Address() { AddressLine1 = "1001 st", City = "St Louis", State = "MO", Zip = "63103" }
+                };
+
+                shelterForMen.ServicesOffered = new List<ServicesOffered>()
+                {
+                    new ServicesOffered() {ServiceType = ServiceType.PermanentHousing, Shelter = shelterForMen},
+                    new ServicesOffered() {ServiceType = ServiceType.TemporaryHousing, Shelter = shelterForMen},
+                    new ServicesOffered() {ServiceType = ServiceType.JobTraining, Shelter = shelterForMen}
                 };
 
                 var beds = new List<Bed>
@@ -72,10 +78,14 @@ namespace HomelessHelper.Test
                 {
                     Name = $"Family shelter {i}",
                     Type = ShelterType.Family,
-                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.PermanentHousing, ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining },
                     Address = new Address() { AddressLine1 = "2001 st", City = "St Louis", State = "MO", Zip = "63104" }
                 };
-
+                shelterForFamilty.ServicesOffered = new List<ServicesOffered>()
+                {
+                    new ServicesOffered() {ServiceType = ServiceType.PermanentHousing, Shelter = shelterForFamilty},
+                    new ServicesOffered() {ServiceType = ServiceType.TemporaryHousing, Shelter = shelterForFamilty},
+                    new ServicesOffered() {ServiceType = ServiceType.JobTraining, Shelter = shelterForFamilty}
+                };
                 var beds = new List<Bed>
             {
                 new Bed
@@ -112,9 +122,14 @@ namespace HomelessHelper.Test
                 {
                     Name = $"LGBT shelter {i}",
                     Type = ShelterType.LGBT,
-                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining },
                     Address = new Address() { AddressLine1 = "3001 st", City = "St Louis", State = "MO", Zip = "63105" }
                 };
+                shelterForLGBT.ServicesOffered = new List<ServicesOffered>()
+                {
+                    new ServicesOffered() {ServiceType = ServiceType.TemporaryHousing, Shelter = shelterForLGBT},
+                    new ServicesOffered() {ServiceType = ServiceType.JobTraining, Shelter = shelterForLGBT}
+                };
+
                 var beds = new List<Bed>
             {
                 new Bed
@@ -151,8 +166,14 @@ namespace HomelessHelper.Test
                 {
                     Name = $" Shelter for Women {i}",
                     Type = ShelterType.Women,
-                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment, ServicesOffered.MedicalServic },
                     Address = new Address() { AddressLine1 = "4001 st", City = "St Louis", State = "MO", Zip = "63106" }
+                };
+                shelterForWomen.ServicesOffered = new List<ServicesOffered>()
+                {
+                    new ServicesOffered() {ServiceType = ServiceType.Employment, Shelter = shelterForWomen},
+                    new ServicesOffered() {ServiceType = ServiceType.MedicalServic, Shelter = shelterForWomen},
+                    new ServicesOffered() {ServiceType = ServiceType.TemporaryHousing, Shelter = shelterForWomen},
+                    new ServicesOffered() {ServiceType = ServiceType.JobTraining, Shelter = shelterForWomen}
                 };
                 var beds = new List<Bed>
             {
@@ -190,8 +211,13 @@ namespace HomelessHelper.Test
                 {
                     Name = $"Shelter for Women with children {i}",
                     Type = ShelterType.WomenWithChildren,
-                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment },
                     Address = new Address() { AddressLine1 = "5001 st", City = "St Louis", State = "MO", Zip = "63107" }
+                };
+                shelterForWomenAndChild.ServicesOffered = new List<ServicesOffered>()
+                {
+                    new ServicesOffered() {ServiceType = ServiceType.Employment, Shelter = shelterForWomenAndChild},
+                    new ServicesOffered() {ServiceType = ServiceType.TemporaryHousing, Shelter = shelterForWomenAndChild},
+                    new ServicesOffered() {ServiceType = ServiceType.JobTraining, Shelter = shelterForWomenAndChild}
                 };
                 var beds = new List<Bed>
             {
@@ -230,8 +256,13 @@ namespace HomelessHelper.Test
                 {
                     Name = $"Shelter for youth {i} ",
                     Type = ShelterType.Youth,
-                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment },
                     Address = new Address() { AddressLine1 = "6001 st", City = "St Louis", State = "MO", Zip = "63108" }
+                };
+                shelter6.ServicesOffered = new List<ServicesOffered>()
+                {
+                    new ServicesOffered() {ServiceType = ServiceType.Employment, Shelter = shelter6},
+                    new ServicesOffered() {ServiceType = ServiceType.TemporaryHousing, Shelter = shelter6},
+                    new ServicesOffered() {ServiceType = ServiceType.JobTraining, Shelter = shelter6}
                 };
                 var shelter6Beds = new List<Bed>
             {
@@ -269,8 +300,13 @@ namespace HomelessHelper.Test
                 {
                     Name = $"Shelter for veterans {i}",
                     Type = ShelterType.Veterans,
-                    ServicesOffered = new List<ServicesOffered>() { ServicesOffered.TemporaryHousing, ServicesOffered.JobTraining, ServicesOffered.Employment },
                     Address = new Address() { AddressLine1 = "6001 st", City = "St Louis", State = "MO", Zip = "63108" }
+                };
+                veteransShelter.ServicesOffered = new List<ServicesOffered>()
+                {
+                    new ServicesOffered() {ServiceType = ServiceType.Employment, Shelter = veteransShelter},
+                    new ServicesOffered() {ServiceType = ServiceType.TemporaryHousing, Shelter = veteransShelter},
+                    new ServicesOffered() {ServiceType = ServiceType.JobTraining, Shelter = veteransShelter}
                 };
                 var beds = new List<Bed>
             {

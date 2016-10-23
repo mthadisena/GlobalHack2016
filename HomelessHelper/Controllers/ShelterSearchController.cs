@@ -47,7 +47,8 @@ namespace HomelessHelper.Controllers
                         ShelterName = shelter.Name,
                         ShelterType = shelter.Type,
                         Beds = shelter.Beds,
-                        ShelterAddress = shelter.Address 
+                        ShelterAddress = shelter.Address,
+                        ServicesOffered = shelter.ServicesOffered
                     }).ToList().Take(15);
             }
 
@@ -58,7 +59,8 @@ namespace HomelessHelper.Controllers
                         ShelterName = shelter.Name,
                         ShelterType = shelter.Type,
                         Beds = shelter.Beds,
-                        ShelterAddress = shelter.Address
+                        ShelterAddress = shelter.Address,
+                        ServicesOffered = shelter.ServicesOffered
                     }).Where(x=>x.ShelterName.Contains(searchInput) || x.ShelterType.ToString().Equals(searchInput, StringComparison.InvariantCultureIgnoreCase) || 
                     x.ShelterAddress.City.Equals(searchInput, StringComparison.InvariantCultureIgnoreCase) || x.ShelterAddress.Zip == searchInput).ToList().Take(15);
             

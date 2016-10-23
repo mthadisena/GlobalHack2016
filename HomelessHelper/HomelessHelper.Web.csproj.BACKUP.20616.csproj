@@ -286,8 +286,11 @@
     <Content Include="Views\Staff\Index.cshtml" />
     <Content Include="Views\ShelterSearch\Index.cshtml" />
     <Content Include="Views\ShelterSearch\ShelterSearchResults.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Shelter\Index.cshtml" />
+=======
     <Content Include="Views\ViewClient\Index.cshtml" />
+>>>>>>> 41c742432afeece963b358395d5597bfb94ef4b2
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
