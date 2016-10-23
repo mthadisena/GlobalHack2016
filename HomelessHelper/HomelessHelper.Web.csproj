@@ -200,6 +200,7 @@
     <Compile Include="Controllers\InTakeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ShelterController.cs" />
     <Compile Include="Controllers\ShelterSearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -283,6 +284,7 @@
     <Content Include="Views\Staff\Index.cshtml" />
     <Content Include="Views\ShelterSearch\Index.cshtml" />
     <Content Include="Views\ShelterSearch\ShelterSearchResults.cshtml" />
+    <Content Include="Views\Shelter\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
