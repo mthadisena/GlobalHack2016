@@ -1,0 +1,41 @@
+﻿@using HomelessHelper.Core.Infrastructure
+@model HomelessHelper.Core.Domain.Shelter
+
+@{
+    Layout = null;
+}
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="myModalLabel">@Model.Name</h4>
+</div>
+<div class="modal-body">
+    @if (Model.Clients.Any())
+    {
+        <table class="table table-striped" style="width: 100%">
+            <tr>
+                <th>Name</th>
+                <th>UUID</th>
+                <th>SSN</th>
+                <th>Bed #</th>
+                <th>DOB</th>
+                <th>Check Out</th>
+            </tr>
+            @foreach (var client in Model.Clients.OrderByDescending(x => x.LastName))
+            {
+                <tr>
+                    <td class="btn-link" data-toggle="modal" data-target="#myModal" style="cursor: pointer" data-id="@client.Id"> @($"{client.FirstName} {client.MiddleName} {client.LastName}")</td>
+                    <td>@client.UUID</td>
+                    <td>@client.SSN.MaskSSN()</td>
+                    <td>@client.BedNumber</td>
+                    <td>@(client.DateOfBirth?.ToString("MM/dd/yyyy"))</td>
+                    <td>Check Out</td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <span>No Available Clients</span>
+    }
+</div>

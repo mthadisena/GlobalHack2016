@@ -1,27 +1,25 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Web.Mvc;
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.EntityFramework;
 
 namespace HomelessHelper.Controllers
 {
-    public class ViewClientController : Controller
+    public class ViewShelterController : Controller
     {
         public PartialViewResult Index(Guid id)
         {
-            return PartialView("Index", new GetClientQuery().Query(id));
+            return PartialView("Index", new GetShelterQuery().Query(id));
         }
     }
 
-    public class GetClientQuery
+    public class GetShelterQuery
     {
         private readonly HomelessHelperDbContext _context = new HomelessHelperDbContext();
-        public Client Query(Guid id)
+        public Shelter Query(Guid id)
         {
-            return _context.Clients.Include(x => x.WarServices).FirstOrDefault(x => x.Id == id);
+            return _context.Shelters.FirstOrDefault(x => x.Id == id);
         }
     }
 }
