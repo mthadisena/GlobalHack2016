@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web.Mvc;
 using HomelessHelper.Core.Domain;
 using HomelessHelper.Core.EntityFramework;
@@ -19,7 +21,7 @@ namespace HomelessHelper.Controllers
         private readonly HomelessHelperDbContext _context = new HomelessHelperDbContext();
         public Client Query(Guid id)
         {
-            return _context.Clients.FirstOrDefault(x => x.Id == id);
+            return _context.Clients.Include(x => x.WarServices).FirstOrDefault(x => x.Id == id);
         }
     }
 }

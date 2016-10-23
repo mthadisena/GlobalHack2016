@@ -53,7 +53,16 @@ namespace HomelessHelper.Controllers
              
                 if (model.IsVet)
                 {
+                    clientToAdd.Veteran = true;
                     shelterType = ShelterType.Veterans;
+                    var warService = new WarService
+                    {
+                        Client = clientToAdd,
+                        WarServedIn = model.VetStatus.WarServedIn.Value,
+                        YearStarted = model.VetStatus.YearEnteredService.Value,
+                        YearEnded = model.VetStatus.YearLeftService.Value
+                    };
+                    clientToAdd.WarServices.Add(warService);
                 }
                  
                 _dbContext.Clients.Add(clientToAdd);
