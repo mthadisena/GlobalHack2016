@@ -17,7 +17,7 @@ namespace HomelessHelper.Controllers
 
         public ActionResult Index(Guid id)
         {
-            var model = _dbContext.Clients.FirstOrDefault(x => x.Id == id);
+            var model = _dbContext.Shelter.FirstOrDefault(x => x.Id == id);
 
             return View(model);
         }
