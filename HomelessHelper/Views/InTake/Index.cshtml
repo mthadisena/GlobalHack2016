@@ -11,42 +11,42 @@
     <div class="intake-form">
         <div class="form-group">
             @Html.LabelFor(model => model.FirstName, new { @class= "col-sm-2 control-label" })
-            @Html.EditorFor(model => model.FirstName)<br />
+            @Html.EditorFor(model => model.FirstName)
             @Html.ValidationMessageFor(model => model.FirstName)
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.LastName, new { @class = "col-sm-2 control-label" })
-            @Html.EditorFor(model => model.LastName)<br />
+            @Html.EditorFor(model => model.LastName)
             @Html.ValidationMessageFor(model => model.LastName)
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.SSN, new { @class = "col-sm-2 control-label" })
-            @Html.EditorFor(model => model.SSN)<br />
+            @Html.EditorFor(model => model.SSN)
             @Html.ValidationMessageFor(model => model.SSN)
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.PhoneNumber, new { @class = "col-sm-2 control-label" })
-            @Html.EditorFor(model => model.PhoneNumber)<br />
+            @Html.EditorFor(model => model.PhoneNumber)
             @Html.ValidationMessageFor(model => model.PhoneNumber)
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.DateOfBirth, new { @class = "col-sm-2 control-label" })
-            @Html.EditorFor(model => model.DateOfBirth)<br />
+            @Html.EditorFor(model => model.DateOfBirth)
             @Html.ValidationMessageFor(model => model.DateOfBirth)
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.Email, new { @class = "col-sm-2 control-label" })
-            @Html.EditorFor(model => model.Email)<br />
+            @Html.EditorFor(model => model.Email)
             @Html.ValidationMessageFor(model => model.Email)
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.Race, new { @class = "col-sm-2 control-label" })
-            @Html.EnumDropDownListFor(model => model.Race)<br />
+            @Html.EnumDropDownListFor(model => model.Race)
             @Html.ValidationMessageFor(model => model.Race)
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.Gender, new { @class = "col-sm-2 control-label" })
-            @Html.EnumDropDownListFor(model => model.Gender)<br />
+            @Html.EnumDropDownListFor(model => model.Gender)
             @Html.ValidationMessageFor(model => model.Gender)
         </div>
         <div class="form-group">
@@ -57,33 +57,33 @@
         <div id="vetStatus">
             <div class="form-group">
                 @Html.LabelFor(model => model.VetStatus.YearEnteredService, new { @class = "col-sm-2 control-label" })
-                @Html.EditorFor(model => model.VetStatus.YearEnteredService)<br />
+                @Html.EditorFor(model => model.VetStatus.YearEnteredService)
                 @Html.ValidationMessageFor(model => model.VetStatus.YearEnteredService)
             </div>
             <div class="form-group" style="">
                 @Html.LabelFor(model => model.VetStatus.YearLeftService, new { @class = "col-sm-2 control-label" })
-                @Html.EditorFor(model => model.VetStatus.YearLeftService)<br />
+                @Html.EditorFor(model => model.VetStatus.YearLeftService)
                 @Html.ValidationMessageFor(model => model.VetStatus.YearLeftService)
             </div>
             <div class="form-group" style="">
                 @Html.LabelFor(model => model.VetStatus.WarServedIn, new { @class = "col-sm-2 control-label" })
-                @Html.EnumDropDownListFor(model => model.VetStatus.WarServedIn)<br />
+                @Html.EnumDropDownListFor(model => model.VetStatus.WarServedIn)
                 @Html.ValidationMessageFor(model => model.VetStatus.WarServedIn)
             </div>
             <div class="form-group" style="">
                 @Html.LabelFor(model => model.VetStatus.MilitaryBranch, new { @class = "col-sm-2 control-label" })
-                @Html.EnumDropDownListFor(model => model.VetStatus.MilitaryBranch)<br />
+                @Html.EnumDropDownListFor(model => model.VetStatus.MilitaryBranch)
                 @Html.ValidationMessageFor(model => model.VetStatus.MilitaryBranch)
             </div>
             <div class="form-group" style="">
                 @Html.LabelFor(model => model.VetStatus.DischargeStatus, new { @class = "col-sm-2 control-label" })
-                @Html.EnumDropDownListFor(model => model.VetStatus.DischargeStatus)<br />
+                @Html.EnumDropDownListFor(model => model.VetStatus.DischargeStatus)
                 @Html.ValidationMessageFor(model => model.VetStatus.DischargeStatus)
             </div>
         </div>
         <div class="form-group" style="">
             @Html.LabelFor(model => model.SituationSummary, new { @class = "col-sm-2 control-label" })
-            @Html.EditorFor(model => model.SituationSummary)<br />
+            @Html.EditorFor(model => model.SituationSummary)
             @Html.ValidationMessageFor(model => model.SituationSummary)
         </div>
         <input type="submit" class="btn btn-success btn-lg" value="Submit" />
