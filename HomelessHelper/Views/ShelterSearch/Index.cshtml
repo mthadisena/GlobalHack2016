@@ -10,16 +10,24 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th style="width: 70%">Name</th>
+            <th style="width: 20%">Name</th>
+            <th>Shelter Type</th>
             <th>Number of Beds</th>
+            <th>Beds Available</th>
+            <th style="width: 20%">Address</th>
+            <th style="width: 20%">Services Offered</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var shelter in Model.Results)
         {
             <tr>
-                <td>@shelter.Name</td>
+                <td>@shelter.ShelterName</td>
+                <td>@shelter.ShelterType</td>
                 <td>@shelter.NumberOfBeds</td>
+                <td>@shelter.BedsAvailable</td>
+                <td>@shelter.ShelterAddress.AddressLine1<br/>@shelter.ShelterAddress.City, &nbsp;&nbsp; @shelter.ShelterAddress.State &nbsp; @shelter.ShelterAddress.Zip </td>
+                <td>@shelter.ServicesOfferedList</td>
             </tr>
         }
     </tbody>
