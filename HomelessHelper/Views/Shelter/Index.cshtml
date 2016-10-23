@@ -17,13 +17,16 @@
         </div>
     </form>
 </div>
-<script>
-    $(document).ready(function() {
 
-        $('#searchShelter').click(function(e) {
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+    
+    $(document).ready(function () {
+       console.log("Shelter search");
+        $('#searchShelter').click(function (e) {
             e.preventDefault();
 
-            if ($('#searchShelter').val() === '' || $('#searchShelter').val().length === '') {
+            if ($('#searchInput').val() === '' || $('#searchInput').val().length === 0) {
                 alert("Please enter search value");
             }
         });
